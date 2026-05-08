@@ -1,0 +1,140 @@
+[
+  {
+    "type": "play_summary",
+    "play": "Hamlet",
+    "entity_name": "Main Plot",
+    "content": "Prince Hamlet returns home to Denmark to find his uncle has murdered his father, married his mother, and taken the throne. A ghost tells Hamlet to get revenge, but Hamlet hesitates, pretends to be mad, and accidentally causes the deaths of his girlfriend and her family before finally killing his uncle in a tragic finale where almost everyone dies."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Hamlet",
+    "content": "The Prince of Denmark. He is grieving his father's death and is deeply upset by his mother's quick remarriage to his uncle. His main motivation is figuring out if his uncle is truly guilty and finding the courage to take revenge, but he constantly overthinks things."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Claudius",
+    "content": "Hamlet's uncle and the new King of Denmark. He secretly murdered Hamlet's father to take the throne and marry the queen. His main goal is to keep his power and eliminate anyone who threatens his secret, including Hamlet."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Gertrude",
+    "content": "Hamlet's mother and the Queen of Denmark. She marries Claudius shortly after her first husband's death. She loves Hamlet but is easily influenced by the men around her and seems unaware that Claudius is a murderer."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Polonius",
+    "content": "The king's chief advisor. He is a nosy, talkative old man who constantly spies on people to gain favor with the king. He is the father of Ophelia and Laertes."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Ophelia",
+    "content": "Polonius's daughter and Hamlet's romantic interest. She is an innocent, obedient girl who is manipulated by her father and brother. Hamlet's cruel behavior and her father's death eventually drive her to madness and a tragic death."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Laertes",
+    "content": "Polonius's son and Ophelia's brother. Unlike Hamlet, he is quick to take action. When his father is killed, he immediately seeks revenge, making him a pawn in King Claudius's plot to kill Hamlet."
+  },
+  {
+    "type": "character_summary",
+    "play": "Hamlet",
+    "entity_name": "Horatio",
+    "content": "Hamlet's loyal best friend from university. He is calm, rational, and the only person Hamlet truly trusts. He is one of the few characters who survives to tell Hamlet's story."
+  },
+  {
+    "type": "play_summary",
+    "play": "Macbeth",
+    "entity_name": "Main Plot",
+    "content": "A brave Scottish general named Macbeth receives a prophecy from three witches that he will become king. Pushed by his ambitious wife, he murders the current king to take the throne. This leads him down a dark path of paranoia and more murders to keep his power, eventually causing a rebellion that leads to his downfall and death."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "Macbeth",
+    "content": "A respected Scottish general whose tragic flaw is his unchecked ambition. He starts as a loyal soldier but becomes a tyrannical and paranoid king after murdering his way to the throne."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "Lady Macbeth",
+    "content": "Macbeth's wife. She is fiercely ambitious and initially stronger and more ruthless than her husband, convincing him to commit murder. However, the guilt eventually drives her insane."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "Banquo",
+    "content": "Macbeth's brave and noble best friend. The witches predict that Banquo's descendants will be kings. Because of this, Macbeth sees him as a threat and has him murdered, after which Banquo's ghost haunts Macbeth."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "Macduff",
+    "content": "A Scottish nobleman who figures out that Macbeth is a tyrant. After Macbeth murders Macduff's family, Macduff leads the army against Macbeth and is the one who ultimately kills him."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "King Duncan",
+    "content": "The good and beloved King of Scotland who Macbeth murders. His death represents the destruction of order and peace in Scotland."
+  },
+  {
+    "type": "character_summary",
+    "play": "Macbeth",
+    "entity_name": "The Witches",
+    "content": "Three mysterious figures who plant the seed of ambition in Macbeth's mind by predicting he will be king. They represent evil and chaos, tricking Macbeth with prophecies that are technically true but misleading."
+  },
+  {
+    "type": "play_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Main Plot",
+    "content": "Two teenagers from rival, feuding families in Verona fall deeply in love at first sight. They secretly marry, but a street fight leads to Romeo being banished. In a desperate attempt to be together, Juliet fakes her own death, but a tragic miscommunication causes Romeo to think she is really dead. He kills himself, and when she wakes up and finds him, she kills herself too."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Romeo",
+    "content": "A teenage boy from the Montague family. He is impulsive, passionate, and constantly in love. He cares nothing for the feud between his family and the Capulets, wanting only to be with Juliet."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Juliet",
+    "content": "A young teenage girl from the Capulet family. She starts the play as a naive child but quickly grows into a strong, determined young woman who risks everything to be with Romeo instead of obeying her parents."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Friar Laurence",
+    "content": "A kind religious man who secretly marries Romeo and Juliet. He hopes their marriage will end the feud between their families, but his complicated plans end up causing their tragic deaths."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Mercutio",
+    "content": "Romeo's best friend. He is funny, cynical, and loves making long speeches. His hot temper leads to a fight with Juliet's cousin, resulting in Mercutio's death and setting off the tragedy."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Tybalt",
+    "content": "Juliet's hot-headed cousin. He hates the Montagues and is always looking for a fight. He kills Mercutio, which causes Romeo to kill him in return."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "The Nurse",
+    "content": "The woman who raised Juliet and acts as her closest confidante. She provides comic relief and helps arrange the secret marriage, but she doesn't fully understand the depth of Juliet's love."
+  },
+  {
+    "type": "character_summary",
+    "play": "Romeo and Juliet",
+    "entity_name": "Lord Capulet",
+    "content": "Juliet's father. He can be a loving parent but demands absolute obedience. He forces Juliet into an arranged marriage, which pushes her to take extreme measures to escape it."
+  }
+]
