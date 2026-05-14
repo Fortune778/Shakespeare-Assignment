@@ -86,7 +86,7 @@ with open('shakespeare_slm_dataset/shakespeare_knowledge/scene_summaries_only.js
     for item in scenes_data:
         f.write(json.dumps(item) + '\n')
 
-base_path = '/Users/acdd3/PycharmProjects/Shakespeare-Assignment/shakespeare_slm_dataset/shakespeare_knowledge/shakespeare_knowledge_base.jsonl'
+base_path = '/preprocessed_data/shakespeare_slm_dataset/shakespeare_knowledge/shakespeare_knowledge_base.jsonl'
 existing_data = []
 if os.path.exists(base_path):
     with open(base_path, 'r') as f:
