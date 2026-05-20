@@ -10,52 +10,12 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from sentence_transformers import SentenceTransformer
 from peft import PeftModel
 
-print("--- INITIALIZING SHAKESPEARE RAG (PROSE EDITION) ---")
-
-# 1. Load Retriever
-embedder = SentenceTransformer('all-MiniLM-L6-v2')
-
-# 2. Configure 4-bit Quantization
-print("[1/3] Loading Base Model into VRAM...")
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.bfloat16,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_use_double_quant=True,
-)
-
-model_id = "meta-llama/Llama-3.2-3B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_id, clean_up_tokenization_spaces=False)
-
-base_model = AutoModelForCausalLM.from_pretrained(
-    model_id, 
-    quantization_config=bnb_config, 
-    device_map="auto",
-    torch_dtype=torch.bfloat16
-)
-
-# 3. ATTACH THE LORA ADAPTER
-print("[2/3] Attaching Shakespeare LoRA Adapter...")
-model = PeftModel.from_pretrained(base_model, "shakespeare_lora_final")
-
-# 4. Load Database
-print("[3/3] Loading Database...")
-index = faiss.read_index("shakespeare_master.index")
-with open("master_metadata.json", "r", encoding="utf-8") as f:
-    metadata = json.load(f)
-
-print("\n✅ System Ready! The Bard will now speak in prose.\n")
-
-while True:
-    user_query = input("\nYour Question: ")
-    if user_query.lower() in ['quit', 'exit']: break
-
+def generate_rag_response(user_query, model, tokenizer, embedder, index, metadata):
     # ==========================================
     # --- STEP 1: QUERY EXPANSION (NO ROUTING) ---
     # ==========================================
     print("\n[Agent 0: Expanding Search Parameters...]")
     
-    # We still expand the query to get better database hits, but we don't force a play name.
     expansion_instruction = (
         "You are a search assistant. Generate 2 alternative search queries to help find the facts or motives behind the user's question.\n"
         "Output ONLY the queries, one per line. Do not number them."
@@ -100,7 +60,6 @@ while True:
     # ==========================================
     print("[Agent 1: Extracting Raw Facts...]")
     
-    # We keep bullet points because it stops 3B models from hallucinating causality.
     fact_instruction = (
         "You are a strict data extractor. Read the context and answer the question using ONLY facts found in the text.\n"
         "CRITICAL: Output exactly 2 or 3 short bullet points. Do not write a paragraph."
@@ -124,7 +83,6 @@ while True:
     # ==========================================
     print("[Agent 2: Translating into 16th-Century Prose...]")
     
-    # PROMPT ENG: Explicitly forbid poetry/verse and demand continuous prose.
     style_instruction = (
         "You are a 16th-century historian. Translate the provided modern facts into Early Modern English.\n"
         "CRITICAL RULES:\n"
@@ -143,7 +101,6 @@ while True:
     p2_text = tokenizer.apply_chat_template(msg_style, tokenize=False, add_generation_prompt=True)
     p2_inputs = tokenizer(p2_text, return_tensors="pt").to(model.device)
 
-    # Increased max_tokens to 200 for paragraph generation; slightly higher temperature for vocabulary variety
     p2_outputs = model.generate(
         **p2_inputs, 
         max_new_tokens=200,
@@ -156,21 +113,64 @@ while True:
 
     translation = tokenizer.decode(p2_outputs[0][p2_inputs['input_ids'].shape[-1]:], skip_special_tokens=True).strip()
     
-    # Post-Process Scrubber to catch any stubborn AI chat habits
     if "Note:" in translation:
         translation = translation.split("Note:")[0].strip()
     if "Here is" in translation:
         translation = translation.split("Here is")[0].strip()
-    
-    # ==========================================
-    # --- FINAL OUTPUT ---
-    # ==========================================
-    print(f"\n--- THE HISTORIAN REPLIES ---")
-    print(f"{translation}")
-    
-    print("\n--- Sources ---")
-    for cite in sorted(set(citations)): 
-        print(f" * {cite}")
-    print("-------------------------")
 
-    torch.cuda.empty_cache()
+    return context_text, translation, citations
+
+
+def main():
+    print("--- INITIALIZING SHAKESPEARE RAG (PROSE EDITION) ---")
+    
+    embedder = SentenceTransformer('all-MiniLM-L6-v2')
+    
+    print("[1/3] Loading Base Model into VRAM...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+    )
+    
+    model_id = "meta-llama/Llama-3.2-3B-Instruct"
+    tokenizer = AutoTokenizer.from_pretrained(model_id, clean_up_tokenization_spaces=False)
+    
+    base_model = AutoModelForCausalLM.from_pretrained(
+        model_id, 
+        quantization_config=bnb_config, 
+        device_map="auto",
+        torch_dtype=torch.bfloat16
+    )
+    
+    print("[2/3] Attaching Shakespeare LoRA Adapter...")
+    model = PeftModel.from_pretrained(base_model, "shakespeare_lora_final")
+    
+    print("[3/3] Loading Database...")
+    index = faiss.read_index("shakespeare_master.index")
+    with open("master_metadata.json", "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+    
+    print("\n✅ System Ready! The Bard will now speak in prose.\n")
+    
+    while True:
+        user_query = input("\nYour Question: ")
+        if user_query.lower() in ['quit', 'exit']: break
+
+        context_text, translation, citations = generate_rag_response(
+            user_query, model, tokenizer, embedder, index, metadata
+        )
+        
+        print(f"\n--- THE HISTORIAN REPLIES ---")
+        print(f"{translation}")
+        
+        print("\n--- Sources ---")
+        for cite in sorted(set(citations)): 
+            print(f" * {cite}")
+        print("-------------------------")
+        
+        torch.cuda.empty_cache()
+
+if __name__ == "__main__":
+    main()
