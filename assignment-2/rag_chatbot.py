@@ -7,26 +7,46 @@ from sentence_transformers import SentenceTransformer
 
 print("--- INITIALIZING SHAKESPEARE RAG (UNIVERSAL SCHOLAR EDITION) ---")
 
+def get_optimal_device():
+    """Detects and returns the best available hardware device."""
+    if torch.cuda.is_available():
+        return "cuda"
+    elif torch.backends.mps.is_available():
+        return "mps"
+    else:
+        return "cpu"
+
+device = get_optimal_device()
+print(f"[*] Detected optimal hardware device: {device.upper()}")
+
 # 1. Load Retriever
-embedder = SentenceTransformer('all-MiniLM-L6-v2')
+embedder = SentenceTransformer('all-MiniLM-L6-v2', device=device)
 
-# 2. Configure 4-bit Quantization for the RTX 2050
-print("[Loading Llama 3.2 3B into VRAM...]")
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.bfloat16,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_use_double_quant=True,
-)
-
+# 2. Configure & Load Base Model
+print("[Loading Llama 3.2 3B...]")
 model_id = "meta-llama/Llama-3.2-3B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+tokenizer = AutoTokenizer.from_pretrained(model_id, clean_up_tokenization_spaces=False)
 
-model = AutoModelForCausalLM.from_pretrained(
-    model_id, 
-    quantization_config=bnb_config, 
-    device_map="auto"
-)
+if device == "cuda":
+    print("    -> Applying 4-bit quantization for CUDA...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        model_id, 
+        quantization_config=bnb_config, 
+        device_map="auto"
+    )
+else:
+    print(f"    -> Loading natively in 16-bit for {device.upper()}...")
+    model = AutoModelForCausalLM.from_pretrained(
+        model_id, 
+        device_map=device,
+        torch_dtype=torch.bfloat16
+    )
 
 # 3. Load Database
 index = faiss.read_index("shakespeare_master.index")

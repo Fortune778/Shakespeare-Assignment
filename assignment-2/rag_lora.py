@@ -121,28 +121,49 @@ def generate_rag_response(user_query, model, tokenizer, embedder, index, metadat
     return context_text, translation, citations
 
 
+def get_optimal_device():
+    """Detects and returns the best available hardware device."""
+    if torch.cuda.is_available():
+        return "cuda"
+    elif torch.backends.mps.is_available():
+        return "mps"
+    else:
+        return "cpu"
+
+
 def main():
     print("--- INITIALIZING SHAKESPEARE RAG (PROSE EDITION) ---")
     
-    embedder = SentenceTransformer('all-MiniLM-L6-v2')
+    device = get_optimal_device()
+    print(f"[*] Detected optimal hardware device: {device.upper()}")
     
-    print("[1/3] Loading Base Model into VRAM...")
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_compute_dtype=torch.bfloat16,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_use_double_quant=True,
-    )
+    embedder = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     
+    print("[1/3] Loading Base Model...")
     model_id = "meta-llama/Llama-3.2-3B-Instruct"
     tokenizer = AutoTokenizer.from_pretrained(model_id, clean_up_tokenization_spaces=False)
     
-    base_model = AutoModelForCausalLM.from_pretrained(
-        model_id, 
-        quantization_config=bnb_config, 
-        device_map="auto",
-        torch_dtype=torch.bfloat16
-    )
+    if device == "cuda":
+        print("    -> Applying 4-bit quantization for CUDA...")
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.bfloat16,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_use_double_quant=True,
+        )
+        base_model = AutoModelForCausalLM.from_pretrained(
+            model_id, 
+            quantization_config=bnb_config, 
+            device_map="auto",
+            torch_dtype=torch.bfloat16
+        )
+    else:
+        print(f"    -> Loading natively in 16-bit for {device.upper()}...")
+        base_model = AutoModelForCausalLM.from_pretrained(
+            model_id, 
+            device_map=device,
+            torch_dtype=torch.bfloat16
+        )
     
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
     model = PeftModel.from_pretrained(base_model, "shakespeare_lora_final")
@@ -170,7 +191,9 @@ def main():
             print(f" * {cite}")
         print("-------------------------")
         
-        torch.cuda.empty_cache()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
 if __name__ == "__main__":
     main()
+

@@ -12,21 +12,41 @@ tokenizer = AutoTokenizer.from_pretrained(
     clean_up_tokenization_spaces=False
 )
 
-# 2. Load the Base Model
-print("Loading 4-bit Base Model...")
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.bfloat16
-)
+def get_optimal_device():
+    """Detects and returns the best available hardware device."""
+    if torch.cuda.is_available():
+        return "cuda"
+    elif torch.backends.mps.is_available():
+        return "mps"
+    else:
+        return "cpu"
 
-base_model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    quantization_config=bnb_config,
-    device_map="auto",
-    torch_dtype=torch.bfloat16
-)
+device = get_optimal_device()
+print(f"[*] Detected optimal hardware device: {device.upper()}")
+
+# 2. Load the Base Model
+print("Loading Base Model...")
+if device == "cuda":
+    print("    -> Applying 4-bit quantization for CUDA...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16
+    )
+    base_model = AutoModelForCausalLM.from_pretrained(
+        model_id,
+        quantization_config=bnb_config,
+        device_map="auto",
+        torch_dtype=torch.bfloat16
+    )
+else:
+    print(f"    -> Loading natively in 16-bit for {device.upper()}...")
+    base_model = AutoModelForCausalLM.from_pretrained(
+        model_id,
+        device_map=device,
+        torch_dtype=torch.bfloat16
+    )
 
 # 3. ATTACH THE LORA ADAPTER
 print("Attaching your trained LoRA Adapter...")
