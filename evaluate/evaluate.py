@@ -107,7 +107,7 @@ def main():
         base_model = AutoModelForCausalLM.from_pretrained(
             model_id, 
             device_map=device,
-            dtype=torch.bfloat16
+            dtype=torch.float16 if device == "mps" else torch.bfloat16
         )
     
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
@@ -123,39 +123,7 @@ def main():
 
     # 1. Test Set Definition
     test_questions = [
-        {
-            "question": "What is the conflict between the Montagues and the Capulets?",
-            "expected_focus": "Romeo and Juliet, family feud"
-        },
-        {
-            "question": "Who is Banquo, and what is his relationship with Macbeth?",
-            "expected_focus": "Macbeth, character relationship"
-        },
-        {
-            "question": "Why does Hamlet delay taking revenge on Claudius?",
-            "expected_focus": "Hamlet, character motivation"
-        },
-        {
-            "question": "What role does the poison play in the final scene of Romeo and Juliet?",
-            "expected_focus": "Romeo and Juliet, plot details"
-        },
-        {
-            "question": "Explain in a Shakespearean style (under 150 words): How does Macbeth feel after seeing the ghost?",
-            "expected_focus": "Macbeth, style generation"
-        },
-        {
-            "question": "Did Hamlet ever meet Juliet?",
-            "expected_focus": "Robustness, hallucination check"
-        },
-        {
-            "question": "What is the exact name of the poison Juliet takes?",
-            "expected_focus": "Robustness, acknowledging lack of evidence"
-        },
-        {
-            "question": "Explain the ending of Hamlet to an 8-year-old child.",
-            "expected_focus": "Beginner usefulness"
-        },
-        # Instructor questions
+        # Instructor-Provided Questions (From the specification):
         {
             "question": "Who is Hamlet?",
             "expected_focus": "Hamlet, character concept"
@@ -175,6 +143,47 @@ def main():
         {
             "question": "Why is Juliet conflicted after meeting Romeo?",
             "expected_focus": "Romeo and Juliet, contextual motivation"
+        },
+        # Group-Designed Questions (For robustness, style, and edge cases):
+        {
+            "question": "What is the conflict between the Montagues and the Capulets?",
+            "expected_focus": "Romeo and Juliet, family feud"
+        },
+        {
+            "question": "Who is Banquo, and what is his relationship with Macbeth?",
+            "expected_focus": "Macbeth, character relationship"
+        },
+        {
+            "question": "What role does the poison play in the final scene of Romeo and Juliet?",
+            "expected_focus": "Romeo and Juliet, plot details"
+        },
+        {
+            "question": "Explain in a Shakespearean style (under 150 words): How does Macbeth feel after seeing the ghost?",
+            "expected_focus": "Macbeth, style generation"
+        },
+        {
+            "question": "Did Hamlet ever meet Juliet?",
+            "expected_focus": "Robustness, hallucination check - they never met"
+        },
+        {
+            "question": "What is the exact name of the poison Juliet takes?",
+            "expected_focus": "Robustness, acknowledging lack of evidence in text"
+        },
+        {
+            "question": "Explain the ending of Hamlet to an 8-year-old child.",
+            "expected_focus": "Beginner usefulness"
+        },
+        {
+            "question": "Summarize the events of Act 1, Scene 3 in Macbeth.",
+            "expected_focus": "Testing scene-level retrieval capabilities"
+        },
+        {
+            "question": "How do the ghosts in 'Hamlet' and 'Macbeth' differ in their purpose?",
+            "expected_focus": "Cross-play comparison and synthesis"
+        },
+        {
+            "question": "What does the phrase 'star-crossed lovers' mean in the context of Romeo and Juliet?",
+            "expected_focus": "Explaining literary themes to beginners"
         }
     ]
 

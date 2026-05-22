@@ -45,7 +45,7 @@ else:
     model = AutoModelForCausalLM.from_pretrained(
         model_id, 
         device_map=device,
-        torch_dtype=torch.bfloat16
+        torch_dtype=torch.float16 if device == "mps" else torch.bfloat16
     )
 
 # 3. Load Database
@@ -113,7 +113,7 @@ while True:
     user_prompt = (
         f"Context:\n{context_text}\n\n"
         f"Question: {user_query}\n\n"
-        f"CRITICAL INSTRUCTIONS: Extract a brief fact from the context to answer the question, and then translate it into 16th-century English. Do NOT write a poem. Use EXACTLY the format below.\n\n"
+        f"CRITICAL INSTRUCTIONS: Extract a brief fact from the context to answer the question, and then translate it into 16th-century English. Rely ONLY on the provided context. Do NOT make up facts or use external knowledge. Do not assume or extrapolate. If the context does not contain the answer, explicitly state that it is not mentioned. Do NOT write a poem. Use EXACTLY the format below.\n\n"
         f"--- EXAMPLE FORMAT ---\n"
         f"EXTRACT: Romeo's friend is Mercutio.\n"
         f"TRANSLATE: Forsooth, the loyal companion to young Romeo is the noble Mercutio.\n"

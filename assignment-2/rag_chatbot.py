@@ -45,7 +45,7 @@ else:
     model = AutoModelForCausalLM.from_pretrained(
         model_id, 
         device_map=device,
-        torch_dtype=torch.bfloat16
+        torch_dtype=torch.float16 if device == "mps" else torch.bfloat16
     )
 
 # 3. Load Database
@@ -111,7 +111,7 @@ while True:
         f"Context:\n{context_text}\n\n"
         f"Question: {user_query}\n\n"
         f"CRITICAL INSTRUCTIONS:\n"
-        f"1. Extract a factual summary from the context to fully answer the question. Rely ONLY on the provided context. (50 to 75 WORDS).\n"
+        f"1. Extract a factual summary from the context to fully answer the question. Rely ONLY on the provided context. Do NOT make up facts or use external knowledge. Do not assume or extrapolate. If the context does not contain the answer, explicitly state that it is not mentioned. (50 to 75 WORDS).\n"
         f"2. Translate that summary into 16th-century Early Modern English (50 to 75 WORDS).\n"
         f"3. Do NOT write a poem. Use EXACTLY the format below.\n\n"
         f"--- EXAMPLE FORMAT ---\n"

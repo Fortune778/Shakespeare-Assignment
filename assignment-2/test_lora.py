@@ -45,7 +45,7 @@ else:
     base_model = AutoModelForCausalLM.from_pretrained(
         model_id,
         device_map=device,
-        torch_dtype=torch.bfloat16
+        torch_dtype=torch.float16 if device == "mps" else torch.bfloat16
     )
 
 # 3. ATTACH THE LORA ADAPTER
