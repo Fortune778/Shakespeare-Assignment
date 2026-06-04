@@ -1,0 +1,974 @@
+question,expected_focus,retrieved_passage,baseline_response,rag_response,correctness_score,grounding_score,retrieval_relevance_score,usefulness_score,style_quality_score,comments
+Who is Hamlet?,"Hamlet, character concept","--- HAMLET (ACT 2, SCENE 2) ---
+rs well bestow'd? Do you hear? Let them be well us'd; for they are the abstract and brief chronicles of the time. After your death you were better have a bad epitaph than their ill report while you live.
+POLONIUS. My lord, I will use them according to their desert.
+HAMLET. God's bodykins, man, much better! Use every man after his desert, and who should scape whipping? Use them after your own honour and dignity. The less they deserve, the more merit is in your bounty. Take them in.
+POLONIUS. Come, sirs.
+HAMLET. Follow him, friends. We'll hear a play to-morrow.
+[Exeunt Polonius and Players [except the First].]
+[Dost thou hear me, old friend? Can you play 'The Murther of]
+[Gonzago'?]
+[1. Play. Ay, my lord.]
+HAMLET. We'll ha't to-morrow night. You could, for a need, study a speech of some dozen or sixteen lines which I would set down and insert in't, could you not? 1. Play. Ay, my lord.
+HAMLET. Very well. Follow that lord- and look you mock him not.
+[Exit First Player.]
+[My good friends, I
+
+--- HAMLET (ACT 2, SCENE 2) ---
+ELSINORE. A room in the Castle.
+FLOURISH. [Enter King and Queen, Rosencrantz and Guildenstern, cum aliis.
+CLAUDIUS. Welcome, dear Rosencrantz and Guildenstern. Moreover that we much did long to see you, The need we have to use you did provoke Our hasty sending. Something have you heard Of Hamlet's transformation. So I call it, Sith nor th' exterior nor the inward man Resembles that it was. What it should be, More than his father's death, that thus hath put him So much from th' understanding of himself, I cannot dream of. I entreat you both That, being of so young days brought up with him, And since so neighbour'd to his youth and haviour, That you vouchsafe your rest here in our court Some little time; so by your companies To draw him on to pleasures, and to gather So much as from occasion you may glean, Whether aught to us unknown afflicts him thus That, open'd, lies within our remedy.
+GERTRUDE. Good gentlemen, he hath much talk'd of you, And sure I am two men there are not living To 
+
+--- HAMLET (ACT 3, SCENE 2) ---
+y lord, you play'd once i' th' university, you say?
+POLONIUS. That did I, my lord, and was accounted a good actor.
+HAMLET. What did you enact?
+POLONIUS. I did enact Julius Caesar; I was kill'd i' th' Capitol; Brutus kill'd me.
+HAMLET. It was a brute part of him to kill so capital a calf there. Be the players ready.
+ROSENCRANTZ. Ay, my lord. They stay upon your patience.
+GERTRUDE. Come hither, my dear Hamlet, sit by me.
+HAMLET. No, good mother. Here's metal more attractive.
+POLONIUS. [to the King] O, ho! do you mark that?
+HAMLET. Lady, shall I lie in your lap?
+[Sits down at Ophelia's feet.]
+OPHELIA. No, my lord.
+HAMLET. I mean, my head upon your lap?
+OPHELIA. Ay, my lord.
+HAMLET. Do you think I meant country matters?
+OPHELIA. I think nothing, my lord.
+HAMLET. That's a fair thought to lie between maids' legs.
+OPHELIA. What is, my lord?
+HAMLET. Nothing.
+OPHELIA. You are merry, my lord.
+HAMLET. Who, I?
+OPHELIA. Ay, my lord.
+HAMLET. O God, your only jig-maker! What should a man do but be me
+
+--- HAMLET (ACT 4, SCENE 1) ---
+p him hence; and this vile deed We must with all our majesty and skill Both countenance and excuse. Ho, Guildenstern!
+[Enter Rosencrantz and Guildenstern.]
+[Friends both, go join you with some further aid.]
+[Hamlet in madness hath Polonius slain,]
+[And from his mother's closet hath he dragg'd him.]
+[Go seek him out; speak fair, and bring the body]
+[Into the chapel. I pray you haste in this.]
+[Exeunt [Rosencrantz and Guildenstern].]
+[Come, Gertrude, we'll call up our wisest friends]
+[And let them know both what we mean to do]
+[And what's untimely done. [So haply slander-]]
+[Whose whisper o'er the world's diameter,]
+[As level as the cannon to his blank,]
+[Transports his poisoned shot- may miss our name]
+[And hit the woundless air.- O, come away!]
+[My soul is full of discord and dismay.]
+[Exeunt.]
+
+--- HAMLET (ACT 5, SCENE 1) ---
+of his lands will scarcely lie in this box; and must th' inheritor himself have no more, ha?
+HORATIO. Not a jot more, my lord.
+HAMLET. Is not parchment made of sheepskins?
+HORATIO. Ay, my lord, And of calveskins too.
+HAMLET. They are sheep and calves which seek out assurance in that. I will speak to this fellow. Whose grave's this, sirrah?
+CLOWN. Mine, sir. [Sings] O, a pit of clay for to be made For such a guest is meet.
+HAMLET. I think it be thine indeed, for thou liest in't.
+CLOWN. You lie out on't, sir, and therefore 'tis not yours. For my part, I do not lie in't, yet it is mine.
+HAMLET. Thou dost lie in't, to be in't and say it is thine. 'Tis for the dead, not for the quick; therefore thou liest.
+CLOWN. 'Tis a quick lie, sir; 'twill away again from me to you.
+HAMLET. What man dost thou dig it for?
+CLOWN. For no man, sir.
+HAMLET. What woman then?
+CLOWN. For none neither.
+HAMLET. Who is to be buried in't?
+CLOWN. One that was a woman, sir; but, rest her soul, she's dead.
+HAMLET. How 
+
+","Hamlet is a fictional character and the main protagonist of a tragic play of the same name by William Shakespeare. He is a prince of Denmark and the son of the king of Denmark and Norway, King Hamlet.
+
+In the play, Hamlet is a complex and introspective character who is deeply disturbed by his father's death and his mother's rapid remarriage to his uncle, Claudius, who has taken the throne. Hamlet is determined to avenge his father's murder and uncover the truth behind his death, leading to a series of events that ultimately lead to tragic consequences.
+
+Hamlet is often considered one of the greatest characters in literature, known for his philosophical musings, witty dialogue, and conflicted emotions. He is a symbol of","Hamlet is the main character and the Prince of Denmark, holding the position of King. He is the son of King Claudius and Queen Gertrude, and the brother of Laertes.",,,,,,
+What is the role of Lady Macbeth?,"Macbeth, character concept","--- MACBETH (ACT 1, SCENE 5) ---
+ transported me beyond]
+[This ignorant present, and I feel now]
+[The future in the instant.]
+MACBETH. My dearest love, Duncan comes here tonight.
+LADY MACBETH. And when goes hence?
+MACBETH. Tomorrow, as he purposes.
+LADY MACBETH. O, never Shall sun that morrow see! Your face, my Thane, is as a book where men May read strange matters. To beguile the time, Look like the time; bear welcome in your eye, Your hand, your tongue; look like the innocent flower, But be the serpent under it. He that's coming Must be provided for; and you shall put This night's great business into my dispatch, Which shall to all our nights and days to come Give solely sovereign sway and masterdom.
+MACBETH. We will speak further.
+LADY MACBETH. Only look up clear; To alter favor ever is to fear. Leave all the rest to me.                            Exeunt.
+
+--- MACBETH (ACT 2, SCENE 3) ---
+laced with his golden blood, And his gash'd stabs look'd like a breach in nature For ruin's wasteful entrance; there, the murtherers, Steep'd in the colors of their trade, their daggers Unmannerly breech'd with gore. Who could refrain, That had a heart to love, and in that heart Courage to make 's love known?
+LADY MACBETH. Help me hence, ho!
+MACDUFF. Look to the lady.
+MALCOLM. [Aside to Donalbain.] Why do we hold our tongues, That most may claim this argument for ours?
+DONALBAIN. [Aside to Malcolm.] What should be spoken here, where our fate, Hid in an auger hole, may rush and seize us? Let's away, Our tears are not yet brew'd.
+MALCOLM. [Aside to Donalbain.] Nor our strong sorrow Upon the foot of motion.
+BANQUO. Look to the lady. Lady Macbeth is carried out. And when we have our naked frailties hid, That suffer in exposure, let us meet And question this most bloody piece of work To know it further. Fears and scruples shake us. In the great hand of God I stand, and thence Against the un
+
+--- MACBETH (ACT 3, SCENE 1) ---
+FORRES. The palace.
+[Enter Banquo.]
+BANQUO. Thou hast it now: King, Cawdor, Glamis, all, As the weird women promised, and I fear Thou play'dst most foully for't; yet it was said It should not stand in thy posterity, But that myself should be the root and father Of many kings. If there come truth from them (As upon thee, Macbeth, their speeches shine) Why, by the verities on thee made good, May they not be my oracles as well And set me up in hope? But hush, no more. Sennet sounds. Enter Macbeth as King, Lady Macbeth as Queen, Lennox, Ross, Lords, Ladies, and Attendants.
+MACBETH. Here's our chief guest.
+LADY MACBETH. If he had been forgotten, It had been as a gap in our great feast And all thing unbecoming.
+MACBETH. Tonight we hold a solemn supper, sir, And I'll request your presence.
+BANQUO. Let your Highness Command upon me, to the which my duties Are with a most indissoluble tie Forever knit.
+MACBETH. Ride you this afternoon?
+BANQUO. Ay, my good lord.
+MACBETH. We should have else desi
+
+--- MACBETH (ACT 3, SCENE 2) ---
+[Enter Lady Macbeth and a Servant.]
+LADY MACBETH. Is Banquo gone from court?
+SERVANT. Ay, madam, but returns again tonight.
+LADY MACBETH. Say to the King I would attend his leisure For a few words.
+SERVANT. Madam, I will.                                  Exit.
+LADY MACBETH. Nought's had, all's spent, Where our desire is got without content. 'Tis safer to be that which we destroy Than by destruction dwell in doubtful joy.
+[Enter Macbeth.]
+[How now, my lord? Why do you keep alone,]
+[Of sorriest fancies your companions making,]
+[Using those thoughts which should indeed have died]
+[With them they think on? Things without all remedy]
+[Should be without regard. What's done is done.]
+MACBETH. We have scotch'd the snake, not kill'd it. She'll close and be herself, whilst our poor malice Remains in danger of her former tooth. But let the frame of things disjoint, both the worlds suffer, Ere we will eat our meal in fear and sleep In the affliction of these terrible dreams That shake us nightly. 
+
+--- MACBETH (ACT 5, SCENE 1) ---
+known her continue in this a quarter of an hour.
+LADY MACBETH. Yet here's a spot.
+DOCTOR. Hark, she speaks! I will set down what comes from her, to satisfy my remembrance the more strongly.
+LADY MACBETH. Out, damned spot! Out, I say! One- two -why then 'tis time to do't. Hell is murky. Fie, my lord, fie! A soldier, and afeard? What need we fear who knows it, when none can call our power to account? Yet who would have thought the old man to have had so much blood in him?
+DOCTOR. Do you mark that?
+LADY MACBETH. The Thane of Fife had a wife; where is she now? What, will these hands neer be clean? No more o' that, my lord, no more o' that. You mar all with this starting.
+DOCTOR. Go to, go to; you have known what you should not.
+GENTLEWOMAN. She has spoke what she should not, I am sure of that. Heaven knows what she has known.
+LADY MACBETH. Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand. Oh, oh, oh!
+DOCTOR. What a sigh is there! The heart i
+
+","In William Shakespeare's play 'Macbeth', Lady Macbeth is a complex and multifaceted character who plays a significant role in the tragic events that unfold. She is the wife of Macbeth, a Scottish nobleman and the Thane of Cawdor, who becomes embroiled in a plot to murder King Duncan and seize the throne.
+
+Initially, Lady Macbeth is portrayed as a strong-willed and ambitious woman who goads her husband into committing the murder. She is the driving force behind the plot, and her goading and manipulation of Macbeth ultimately lead to the tragic events that unfold.
+
+However, as the play progresses, Lady Macbeth's character becomes increasingly consumed by guilt and paranoia. Her actions and words have a profound","In William Shakespeare's play Macbeth, Lady Macbeth is a pivotal character who plays a central role in her husband's descent into madness and tyranny. She is the queen of Scotland and the driving force behind Macbeth's decision to murder King Duncan, goading him into committing the heinous act. However, her own guilt and paranoia soon consume her, as she becomes fixated on erasing the ""spot"" of blood from her hands, which she believes will restore her to a state of moral purity. This obsessive preoccupation ultimately leads to her downfall, as her own psychological turmoil mirrors the chaos she has unleashed upon Scotland.",,,,,,
+Why does Macbeth kill Duncan?,"Macbeth, contextual motivation","--- MACBETH (ACT 2, SCENE 2) ---
+ Hath left you unattended. [Knocking within.] Hark, more knocking. Get on your nightgown, lest occasion call us And show us to be watchers. Be not lost So poorly in your thoughts.
+MACBETH. To know my deed, 'twere best not know myself. Knocking within. Wake Duncan with thy knocking! I would thou couldst!
+[Exeunt.]
+
+--- MACBETH (ACT 2, SCENE 2) ---
+[Enter Lady Macbeth.]
+LADY MACBETH. That which hath made them drunk hath made me bold; What hath quench'd them hath given me fire. Hark! Peace! It was the owl that shriek'd, the fatal bellman, Which gives the stern'st good night. He is about it: The doors are open, and the surfeited grooms Do mock their charge with snores. I have drugg'd their possets That death and nature do contend about them, Whether they live or die.
+MACBETH. [Within.] Who's there? what, ho!
+LADY MACBETH. Alack, I am afraid they have awaked And 'tis not done. The attempt and not the deed Confounds us. Hark! I laid their daggers ready; He could not miss 'em. Had he not resembled My father as he slept, I had done't.
+[Enter Macbeth.]
+[My husband!]
+MACBETH. I have done the deed. Didst thou not hear a noise?
+LADY MACBETH. I heard the owl scream and the crickets cry. Did not you speak?
+MACBETH. When?
+LADY MACBETH. Now.
+MACBETH. As I descended?
+LADY MACBETH. Ay.
+MACBETH. Hark! Who lies i' the second chamber?
+LADY MACBETH.
+
+--- MACBETH (ACT 2, SCENE 3) ---
+ know't. The spring, the head, the fountain of your blood Is stopped, the very source of it is stopp'd.
+MACDUFF. Your royal father's murther'd.
+MALCOLM. O, by whom?
+LENNOX. Those of his chamber, as it seem'd, had done't. Their hands and faces were all badged with blood; So were their daggers, which unwiped we found Upon their pillows. They stared, and were distracted; no man's life Was to be trusted with them.
+MACBETH. O, yet I do repent me of my fury, That I did kill them.
+MACDUFF. Wherefore did you so?
+MACBETH. Who can be wise, amazed, temperate and furious, Loyal and neutral, in a moment? No man. The expedition of my violent love Outrun the pauser reason. Here lay Duncan, His silver skin laced with his golden blood, And his gash'd stabs look'd like a breach in nature For ruin's wasteful entrance; there, the murtherers, Steep'd in the colors of their trade, their daggers Unmannerly breech'd with gore. Who could refrain, That had a heart to love, and in that heart Courage to make 's l
+
+--- MACBETH (ACT 3, SCENE 6) ---
+FORRES. The palace.
+[Enter Lennox and another Lord.]
+LENNOX. My former speeches have but hit your thoughts, Which can interpret farther; only I say Thing's have been strangely borne. The gracious Duncan Was pitied of Macbeth; marry, he was dead. And the right valiant Banquo walk'd too late, Whom, you may say, if't please you, Fleance kill'd, For Fleance fled. Men must not walk too late. Who cannot want the thought, how monstrous It was for Malcolm and for Donalbain To kill their gracious father? Damned fact! How it did grieve Macbeth! Did he not straight, In pious rage, the two delinquents tear That were the slaves of drink and thralls of sleep? Was not that nobly done? Ay, and wisely too, For 'twould have anger'd any heart alive To hear the men deny't. So that, I say, He has borne all things well; and I do think That, had he Duncan's sons under his key- As, an't please heaven, he shall not -they should find What 'twere to kill a father; so should Fleance. But, peace! For from broad wo
+
+--- MACBETH (ACT 3, SCENE 6) ---
+or 'twould have anger'd any heart alive To hear the men deny't. So that, I say, He has borne all things well; and I do think That, had he Duncan's sons under his key- As, an't please heaven, he shall not -they should find What 'twere to kill a father; so should Fleance. But, peace! For from broad words, and 'cause he fail'd His presence at the tyrant's feast, I hear, Macduff lives in disgrace. Sir, can you tell Where he bestows himself?
+LORD. The son of Duncan, From whom this tyrant holds the due of birth, Lives in the English court and is received Of the most pious Edward with such grace That the malevolence of fortune nothing Takes from his high respect. Thither Macduff Is gone to pray the holy King, upon his aid To wake Northumberland and warlike Siward; That by the help of these, with Him above To ratify the work, we may again Give to our tables meat, sleep to our nights, Free from our feasts and banquets bloody knives, Do faithful homage, and receive free honors- All which we pine
+
+","In William Shakespeare's play ""Macbeth"", Macbeth kills King Duncan in Act 2, Scene 2, after being goaded into doing so by his wife, Lady Macbeth. 
+
+Initially, Macbeth had encountered a prophecy made by the three witches that foretells his rise to the throne, but he is initially hesitant to act on it due to his own moral reservations and loyalty to Duncan. However, after Lady Macbeth presses him to take action, he becomes convinced that he must kill the king in order to secure his own position.
+
+Lady Macbeth's goading and manipulation ultimately push Macbeth to commit the murder. He sees an opportunity to kill Duncan while the king is in his castle, and with the help of his accomp","In the play Macbeth, Macbeth murders King Duncan, the ruler of Scotland, in a premeditated act of regicide. The murder is carried out by Macbeth and his accomplices, referred to as ""the men"" in the third scene, with the intention of securing the throne for themselves. Macbeth's motivation is to eliminate the current king and assume the position of power, driven by his own ambition and spurred on by the prophecies of the three witches, which he interprets as a guarantee of his future success. This brutal act sets in motion a chain of events that ultimately leads to chaos and destruction.",,,,,,
+Why does Hamlet delay taking revenge?,"Hamlet, contextual motivation","--- HAMLET (ACT 1, SCENE 4) ---
+r, royal Dane. O, answer me? Let me not burst in ignorance, but tell Why thy canoniz'd bones, hearsed in death, Have burst their cerements; why the sepulchre Wherein we saw thee quietly inurn'd, Hath op'd his ponderous and marble jaws To cast thee up again. What may this mean That thou, dead corse, again in complete steel, Revisits thus the glimpses of the moon, Making night hideous, and we fools of nature So horridly to shake our disposition With thoughts beyond the reaches of our souls? Say, why is this? wherefore? What should we do? Ghost beckons Hamlet.
+HORATIO. It beckons you to go away with it, As if it some impartment did desire To you alone.
+MARCELLUS. Look with what courteous action It waves you to a more removed ground. But do not go with it!
+HORATIO. No, by no means!
+HAMLET. It will not speak. Then will I follow it.
+HORATIO. Do not, my lord!
+HAMLET. Why, what should be the fear? I do not set my life at a pin's fee; And for my soul, what can it do to that, Being a thing immor
+
+--- HAMLET (ACT 3, SCENE 3) ---
+n, And so am I reveng'd. That would be scann'd. A villain kills my father; and for that, I, his sole son, do this same villain send To heaven. Why, this is hire and salary, not revenge! He took my father grossly, full of bread, With all his crimes broad blown, as flush as May; And how his audit stands, who knows save heaven? But in our circumstance and course of thought, 'Tis heavy with him; and am I then reveng'd, To take him in the purging of his soul, When he is fit and seasoned for his passage? No. Up, sword, and know thou a more horrid hent. When he is drunk asleep; or in his rage; Or in th' incestuous pleasure of his bed; At gaming, swearing, or about some act That has no relish of salvation in't- Then trip him, that his heels may kick at heaven, And that his soul may be as damn'd and black As hell, whereto it goes. My mother stays. This physic but prolongs thy sickly days.              Exit.
+CLAUDIUS. [rises] My words fly up, my thoughts remain below. Words without thoughts neve
+
+--- HAMLET (ACT 4, SCENE 4) ---
+      [Exit.]
+ROSENCRANTZ. Will't please you go, my lord?
+HAMLET. I'll be with you straight. Go a little before.
+[Exeunt all but Hamlet.]
+[How all occasions do inform against me]
+[And spur my dull revenge! What is a man,]
+[If his chief good and market of his time]
+[Be but to sleep and feed? A beast, no more.]
+[Sure he that made us with such large discourse,]
+[Looking before and after, gave us not]
+[That capability and godlike reason]
+[To fust in us unus'd. Now, whether it be]
+[Bestial oblivion, or some craven scruple]
+[Of thinking too precisely on th' event,-]
+[A thought which, quarter'd, hath but one part wisdom]
+[And ever three parts coward,- I do not know]
+[Why yet I live to say 'This thing's to do,']
+[Sith I have cause, and will, and strength, and means]
+[To do't. Examples gross as earth exhort me.]
+[Witness this army of such mass and charge,]
+[Led by a delicate and tender prince,]
+[Whose spirit, with divine ambition puff'd,]
+[Makes mouths at the invisible event,]
+[Exposing what is
+
+--- HAMLET (ACT 4, SCENE 4) ---
+ng's to do,']
+[Sith I have cause, and will, and strength, and means]
+[To do't. Examples gross as earth exhort me.]
+[Witness this army of such mass and charge,]
+[Led by a delicate and tender prince,]
+[Whose spirit, with divine ambition puff'd,]
+[Makes mouths at the invisible event,]
+[Exposing what is mortal and unsure]
+[To all that fortune, death, and danger dare,]
+[Even for an eggshell. Rightly to be great]
+[Is not to stir without great argument,]
+[But greatly to find quarrel in a straw]
+[When honour's at the stake. How stand I then,]
+[That have a father kill'd, a mother stain'd,]
+[Excitements of my reason and my blood,]
+[And let all sleep, while to my shame I see]
+[The imminent death of twenty thousand men]
+[That for a fantasy and trick of fame]
+[Go to their graves like beds, fight for a plot]
+[Whereon the numbers cannot try the cause,]
+[Which is not tomb enough and continent]
+[To hide the slain? O, from this time forth,]
+[My thoughts be bloody, or be nothing worth!            Exit.]
+
+
+--- HAMLET (ACT 4, SCENE 7) ---
+to you? Or are you like the painting of a sorrow, A face without a heart,'
+LAERTES. Why ask you this?
+CLAUDIUS. Not that I think you did not love your father; But that I know love is begun by time, And that I see, in passages of proof, Time qualifies the spark and fire of it. There lives within the very flame of love A kind of wick or snuff that will abate it; And nothing is at a like goodness still; For goodness, growing to a plurisy, Dies in his own too-much. That we would do, We should do when we would; for this 'would' changes, And hath abatements and delays as many As there are tongues, are hands, are accidents; And then this 'should' is like a spendthrift sigh, That hurts by easing. But to the quick o' th' ulcer! Hamlet comes back. What would you undertake To show yourself your father's son in deed More than in words?
+LAERTES. To cut his throat i' th' church!
+CLAUDIUS. No place indeed should murther sanctuarize; Revenge should have no bounds. But, good Laertes, Will you do this? 
+
+","In William Shakespeare's play Hamlet, Hamlet delays taking revenge on his uncle Claudius, who murdered his father and took the throne, for several reasons. Here are some key factors that contribute to his delay:
+
+1. **Guilt and moral ambiguity**: Hamlet is torn between his desire for revenge and his moral principles. He grapples with the idea of killing an innocent man, even if he is guilty, and the moral implications of taking a life.
+2. **Fear of being wrong**: Hamlet is uncertain about the circumstances surrounding his father's death and the motivations of the other characters. He is unsure whether his uncle's guilt is genuine or if he is being manipulated by others.
+3. **Lack of conclusive evidence**:","Hamlet's decision to delay taking revenge is motivated by his concern that acting impulsively, such as when his father is drunk or in a state of passion, would be ineffective. He believes that revenge should be carried out when the opportunity arises, rather than being driven by a desire for it, which can be fleeting. Furthermore, Hamlet thinks that taking revenge too soon would be unfulfilling, likening it to a ""spendthrift sigh"" that ""hurts by easing"", suggesting that it would not bring the desired satisfaction or relief, and would ultimately be counterproductive.",,,,,,
+Why is Juliet conflicted after meeting Romeo?,"Romeo and Juliet, contextual motivation","--- ROMEO AND JULIET (ACT 1, SCENE 1) ---
+were the servants of your adversary And yours, close fighting ere I did approach. I drew to part them. In the instant came The fiery Tybalt, with his sword prepar'd; Which, as he breath'd defiance to my ears, He swung about his head and cut the winds, Who, nothing hurt withal, hiss'd him in scorn. While we were interchanging thrusts and blows, Came more and more, and fought on part and part, Till the Prince came, who parted either part.
+M. Wife. O, where is Romeo? Saw you him to-day? Right glad I am he was not at this fray.
+BENVOLIO. Madam, an hour before the worshipp'd sun Peer'd forth the golden window of the East, A troubled mind drave me to walk abroad; Where, underneath the grove of sycamore That westward rooteth from the city's side, So early walking did I see your son. Towards him I made; but he was ware of me And stole into the covert of the wood. I- measuring his affections by my own, Which then most sought where most might not be found, Being one too many by my weary self- Pu
+
+--- ROMEO AND JULIET (ACT 1, SCENE 1) ---
+love?
+ROMEO. What, shall I groan and tell thee?
+BENVOLIO. Groan? Why, no; But sadly tell me who.
+ROMEO. Bid a sick man in sadness make his will. Ah, word ill urg'd to one that is so ill! In sadness, cousin, I do love a woman.
+BENVOLIO. I aim'd so near when I suppos'd you lov'd.
+ROMEO. A right good markman! And she's fair I love.
+BENVOLIO. A right fair mark, fair coz, is soonest hit.
+ROMEO. Well, in that hit you miss. She'll not be hit With Cupid's arrow. She hath Dian's wit, And, in strong proof of chastity well arm'd, From Love's weak childish bow she lives unharm'd. She will not stay the siege of loving terms, Nor bide th' encounter of assailing eyes, Nor ope her lap to saint-seducing gold. O, she's rich in beauty; only poor That, when she dies, with beauty dies her store.
+BENVOLIO. Then she hath sworn that she will still live chaste?
+ROMEO. She hath, and in that sparing makes huge waste; For beauty, starv'd with her severity, Cuts beauty off from all posterity. She is too fair, too 
+
+--- ROMEO AND JULIET (ACT 1, SCENE 5) ---
+and honour of my kin, To strike him dead I hold it not a sin.
+CAPULET. Why, how now, kinsman? Wherefore storm you so?
+TYBALT. Uncle, this is a Montague, our foe; A villain, that is hither come in spite To scorn at our solemnity this night.
+CAPULET. Young Romeo is it?
+TYBALT. 'Tis he, that villain Romeo.
+CAPULET. Content thee, gentle coz, let him alone. 'A bears him like a portly gentleman, And, to say truth, Verona brags of him To be a virtuous and well-govern'd youth. I would not for the wealth of all this town Here in my house do him disparagement. Therefore be patient, take no note of him. It is my will; the which if thou respect, Show a fair presence and put off these frowns, An ill-beseeming semblance for a feast.
+TYBALT. It fits when such a villain is a guest. I'll not endure him.
+CAPULET. He shall be endur'd. What, goodman boy? I say he shall. Go to! Am I the master here, or you? Go to! You'll not endure him? God shall mend my soul! You'll make a mutiny among my guests! You will
+
+--- ROMEO AND JULIET (ACT 1, SCENE 5) ---
+ave the chinks.
+ROMEO. Is she a Capulet? O dear account! my life is my foe's debt.
+BENVOLIO. Away, be gone; the sport is at the best.
+ROMEO. Ay, so I fear; the more is my unrest.
+CAPULET. Nay, gentlemen, prepare not to be gone; We have a trifling foolish banquet towards. Is it e'en so? Why then, I thank you all. I thank you, honest gentlemen. Good night. More torches here! [Exeunt Maskers.] Come on then, let's to bed. Ah, sirrah, by my fay, it waxes late; I'll to my rest.
+[Exeunt [all but Juliet and Nurse].]
+JULIET. Come hither, nurse. What is yond gentleman?
+NURSE. The son and heir of old Tiberio.
+JULIET. What's he that now is going out of door?
+NURSE. Marry, that, I think, be young Petruchio.
+JULIET. What's he that follows there, that would not dance?
+NURSE. I know not.
+JULIET. Go ask his name.- If he be married, My grave is like to be my wedding bed.
+NURSE. His name is Romeo, and a Montague, The only son of your great enemy.
+JULIET. My only love, sprung from my only hate! Too early 
+
+--- ROMEO AND JULIET (ACT 5, SCENE 3) ---
+All are punish'd.
+CAPULET. O brother Montague, give me thy hand. This is my daughter's jointure, for no more Can I demand.
+MONTAGUE. But I can give thee more; For I will raise her statue in pure gold, That whiles Verona by that name is known, There shall no figure at such rate be set As that of true and faithful Juliet.
+CAPULET. As rich shall Romeo's by his lady's lie- Poor sacrifices of our enmity!
+PRINCE. A glooming peace this morning with it brings. The sun for sorrow will not show his head. Go hence, to have more talk of these sad things; Some shall be pardon'd, and some punished; For never was a story of more woe Than this of Juliet and her Romeo.
+[Exeunt omnes.]
+
+","In William Shakespeare's play Romeo and Juliet, Juliet is initially conflicted because she is a member of the Capulet family, who are sworn enemies of the Montague family, to which Romeo belongs. This family feud is a major plot point in the play.
+
+When Juliet meets Romeo at a ball, she is immediately drawn to him, but she knows that their families have a long-standing hatred for each other. This creates a conflict within her, as she is torn between her love for Romeo and her loyalty to her family.
+
+Furthermore, Juliet's parents have already arranged for her to marry Paris, a man of their social standing, which makes her feel trapped and uncertain about her future. The combination of these conflicting desires and obligations creates Juliet's inner turmoil","Juliet is torn between her love for Romeo, a member of her sworn enemy family, the Montagues, and her loyalty to her own family. Her love for Romeo creates a deep emotional conflict, as she is aware that marrying him would be a betrayal of her family's values and potentially bring shame to her family's name. Furthermore, Juliet is also aware of the long-standing feud between the Montagues and her own family, the Capulets, and the potential consequences of defying her family's wishes and marrying Romeo, making her inner turmoil even more complicated.",,,,,,
+What is the conflict between the Montagues and the Capulets?,"Romeo and Juliet, family feud","--- ROMEO AND JULIET (ACT 1, SCENE 1) ---
+wn among these heartless hinds? Turn thee Benvolio! look upon thy death.
+BENVOLIO. I do but keep the peace. Put up thy sword, Or manage it to part these men with me.
+TYBALT. What, drawn, and talk of peace? I hate the word As I hate hell, all Montagues, and thee. Have at thee, coward!                            They fight.
+[Enter an officer, and three or four Citizens with clubs or]
+[partisans.]
+OFFICER. Clubs, bills, and partisans! Strike! beat them down!
+CITIZENS. Down with the Capulets! Down with the Montagues!
+[Enter Old Capulet in his gown, and his Wife.]
+CAPULET. What noise is this? Give me my long sword, ho!
+WIFE. A crutch, a crutch! Why call you for a sword?
+CAPULET. My sword, I say! Old Montague is come And flourishes his blade in spite of me.
+[Enter Old Montague and his Wife.]
+MONTAGUE. Thou villain Capulet!- Hold me not, let me go.
+M. Wife. Thou shalt not stir one foot to seek a foe.
+[Enter Prince Escalus, with his Train.]
+PRINCE. Rebellious subjects, enemies to peace, Profan
+
+--- ROMEO AND JULIET (ACT 1, SCENE 1) ---
+Old Montague is come And flourishes his blade in spite of me.
+[Enter Old Montague and his Wife.]
+MONTAGUE. Thou villain Capulet!- Hold me not, let me go.
+M. Wife. Thou shalt not stir one foot to seek a foe.
+[Enter Prince Escalus, with his Train.]
+PRINCE. Rebellious subjects, enemies to peace, Profaners of this neighbour-stained steel- Will they not hear? What, ho! you men, you beasts, That quench the fire of your pernicious rage With purple fountains issuing from your veins! On pain of torture, from those bloody hands Throw your mistempered weapons to the ground And hear the sentence of your moved prince. Three civil brawls, bred of an airy word By thee, old Capulet, and Montague, Have thrice disturb'd the quiet of our streets And made Verona's ancient citizens Cast by their grave beseeming ornaments To wield old partisans, in hands as old, Cank'red with peace, to part your cank'red hate. If ever you disturb our streets again, Your lives shall pay the forfeit of the peace. For this tim
+
+--- ROMEO AND JULIET (ACT 1, SCENE 5) ---
+and honour of my kin, To strike him dead I hold it not a sin.
+CAPULET. Why, how now, kinsman? Wherefore storm you so?
+TYBALT. Uncle, this is a Montague, our foe; A villain, that is hither come in spite To scorn at our solemnity this night.
+CAPULET. Young Romeo is it?
+TYBALT. 'Tis he, that villain Romeo.
+CAPULET. Content thee, gentle coz, let him alone. 'A bears him like a portly gentleman, And, to say truth, Verona brags of him To be a virtuous and well-govern'd youth. I would not for the wealth of all this town Here in my house do him disparagement. Therefore be patient, take no note of him. It is my will; the which if thou respect, Show a fair presence and put off these frowns, An ill-beseeming semblance for a feast.
+TYBALT. It fits when such a villain is a guest. I'll not endure him.
+CAPULET. He shall be endur'd. What, goodman boy? I say he shall. Go to! Am I the master here, or you? Go to! You'll not endure him? God shall mend my soul! You'll make a mutiny among my guests! You will
+
+--- ROMEO AND JULIET (ACT 5, SCENE 3) ---
+All are punish'd.
+CAPULET. O brother Montague, give me thy hand. This is my daughter's jointure, for no more Can I demand.
+MONTAGUE. But I can give thee more; For I will raise her statue in pure gold, That whiles Verona by that name is known, There shall no figure at such rate be set As that of true and faithful Juliet.
+CAPULET. As rich shall Romeo's by his lady's lie- Poor sacrifices of our enmity!
+PRINCE. A glooming peace this morning with it brings. The sun for sorrow will not show his head. Go hence, to have more talk of these sad things; Some shall be pardon'd, and some punished; For never was a story of more woe Than this of Juliet and her Romeo.
+[Exeunt omnes.]
+
+--- ROMEO AND JULIET (ACT 5, SCENE 3) ---
+ch? Sirrah, what made your master in this place?
+BOY. He came with flowers to strew his lady's grave; And bid me stand aloof, and so I did. Anon comes one with light to ope the tomb; And by-and-by my master drew on him; And then I ran away to call the watch.
+PRINCE. This letter doth make good the friar's words, Their course of love, the tidings of her death; And here he writes that he did buy a poison Of a poor pothecary, and therewithal Came to this vault to die, and lie with Juliet. Where be these enemies? Capulet, Montague, See what a scourge is laid upon your hate, That heaven finds means to kill your joys with love! And I, for winking at you, discords too, Have lost a brace of kinsmen. All are punish'd.
+CAPULET. O brother Montague, give me thy hand. This is my daughter's jointure, for no more Can I demand.
+MONTAGUE. But I can give thee more; For I will raise her statue in pure gold, That whiles Verona by that name is known, There shall no figure at such rate be set As that of true
+
+","In William Shakespeare's tragic play ""Romeo and Juliet,"" the conflict between the Montagues and the Capulets is a long-standing feud between two powerful and influential families in Verona, Italy. The exact cause of the feud is not explicitly stated in the play, but it is implied to be a historical and deeply ingrained one.
+
+Throughout the play, the animosity and hatred between the two families are fueled by their long-standing rivalry and a sense of pride and loyalty to their own families. The tension between them is often depicted as a major obstacle to the love between the two main characters, Romeo and Juliet, who are from different families.
+
+The conflict is also fueled by a sense of honor and pride, with each family seeking to out","In Verona, two prominent families, the Montagues and Capulets, have been embroiled in a longstanding feud. The animosity between them is fueled by a violent confrontation between their members, which has escalated tensions to a boiling point. In an effort to quell the violence, the Prince of Verona has stepped in, issuing a stern warning to both families to put an end to their hostilities. The Prince has made it clear that any further disturbances will be met with severe punishment, underscoring the need for the families to find a path towards reconciliation and peace.",,,,,,
+"Who is Banquo, and what is his relationship with Macbeth?","Macbeth, character relationship","--- MACBETH (ACT 1, SCENE 3) ---
+ange garments, cleave not to their mould But with the aid of use.
+MACBETH. [Aside.] Come what come may, Time and the hour runs through the roughest day.
+BANQUO. Worthy Macbeth, we stay upon your leisure.
+MACBETH. Give me your favor; my dull brain was wrought With things forgotten. Kind gentlemen, your pains Are register'd where every day I turn The leaf to read them. Let us toward the King. Think upon what hath chanced, and at more time, The interim having weigh'd it, let us speak Our free hearts each to other.
+BANQUO. Very gladly.
+MACBETH. Till then, enough. Come, friends.             Exeunt.
+
+--- MACBETH (ACT 3, SCENE 1) ---
+e men]
+[Our pleasure?]
+ATTENDANT. They are, my lord, without the palace gate.
+MACBETH. Bring them before us.                 Exit Attendant. To be thus is nothing, But to be safely thus. Our fears in Banquo. Stick deep, and in his royalty of nature Reigns that which would be fear'd. 'Tis much he dares, And, to that dauntless temper of his mind, He hath a wisdom that doth guide his valor To act in safety. There is none but he Whose being I do fear; and under him My genius is rebuked, as it is said Mark Antony's was by Caesar. He chid the sisters When first they put the name of King upon me And bade them speak to him; then prophet-like They hail'd him father to a line of kings. Upon my head they placed a fruitless crown And put a barren sceptre in my gripe, Thence to be wrench'd with an unlineal hand, No son of mine succeeding. If't be so, For Banquo's issue have I filed my mind, For them the gracious Duncan have I murther'd, Put rancors in the vessel of my peace Only for them, and mine 
+
+--- MACBETH (ACT 3, SCENE 1) ---
+eance his son, that keeps him company, Whose absence is no less material to me Than is his father's, must embrace the fate Of that dark hour. Resolve yourselves apart; I'll come to you anon.
+BOTH MURTHERERS. We are resolved, my lord.
+MACBETH. I'll call upon you straight. Abide within.
+[Exeunt Murtherers.]
+[It is concluded: Banquo, thy soul's flight,]
+[If it find heaven, must find it out tonight.           Exit.]
+
+--- MACBETH (ACT 3, SCENE 1) ---
+ bestow'd In England and in Ireland, not confessing Their cruel parricide, filling their hearers With strange invention. But of that tomorrow, When therewithal we shall have cause of state Craving us jointly. Hie you to horse; adieu, Till you return at night. Goes Fleance with you?
+BANQUO. Ay, my good lord. Our time does call upon 's.
+MACBETH. I wish your horses swift and sure of foot, And so I do commend you to their backs.
+FAREWELL. Exit Banquo. Let every man be master of his time Till seven at night; to make society The sweeter welcome, we will keep ourself Till supper time alone. While then, God be with you!
+[Exeunt all but Macbeth and an Attendant.]
+[Sirrah, a word with you. Attend those men]
+[Our pleasure?]
+ATTENDANT. They are, my lord, without the palace gate.
+MACBETH. Bring them before us.                 Exit Attendant. To be thus is nothing, But to be safely thus. Our fears in Banquo. Stick deep, and in his royalty of nature Reigns that which would be fear'd. 'Tis much he dar
+
+--- MACBETH (ACT 3, SCENE 1) ---
+l then, now Have you consider'd of my speeches? Know That it was he in the times past which held you So under fortune, which you thought had been Our innocent self? This I made good to you In our last conference, pass'd in probation with you: How you were borne in hand, how cross'd, the instruments, Who wrought with them, and all things else that might To half a soul and to a notion crazed Say, ""Thus did Banquo.""
+FIRST MURTHERER. You made it known to us.
+MACBETH. I did so, and went further, which is now Our point of second meeting. Do you find Your patience so predominant in your nature, That you can let this go? Are you so gospel'd, To pray for this good man and for his issue, Whose heavy hand hath bow'd you to the grave And beggar'd yours forever?
+FIRST MURTHERER. We are men, my liege.
+MACBETH. Ay, in the catalogue ye go for men, As hounds and greyhounds, mongrels, spaniels, curs, Shoughs, waterrugs, and demi-wolves are clept All by the name of dogs. The valued file Distinguishes the
+
+","In William Shakespeare's tragic play ""Macbeth,"" Banquo is a key character and a Scottish nobleman. He is the Thane of Cawdor and the King of Scotland's most trusted advisor.
+
+Banquo is initially introduced as a loyal and respected member of King Duncan's council, but he becomes increasingly suspicious of Macbeth's intentions and ultimately becomes a thorn in his side. However, their relationship with each other is complex and multifaceted.
+
+Macbeth and Banquo have a deep respect for each other, and Banquo serves as a foil to Macbeth's character. Banquo represents the old Scotland, with its values of loyalty, honor, and tradition. Macbeth, on the other hand, represents the new, modern","Banquo is a significant character in William Shakespeare's play Macbeth, serving as a friend and fellow general to the titular character, Macbeth. He is also the son of King Duncan, the ruler of Scotland. As the son of the king, Banquo holds a high social status, but his fate is ultimately sealed when Macbeth, driven by guilt and paranoia, orchestrates his murder. Banquo's death serves as a pivotal moment in the play, as it sets off a chain of events that further fuels Macbeth's descent into madness and tyranny.",,,,,,
+What role does the poison play in the final scene of Romeo and Juliet?,"Romeo and Juliet, plot details","--- ROMEO AND JULIET (ACT 4, SCENE 3) ---
+all meet again. I have a faint cold fear thrills through my veins That almost freezes up the heat of life. I'll call them back again to comfort me. Nurse!- What should she do here? My dismal scene I needs must act alone. Come, vial. What if this mixture do not work at all? Shall I be married then to-morrow morning? No, No! This shall forbid it. Lie thou there. Lays down a dagger. What if it be a poison which the friar Subtilly hath minist'red to have me dead, Lest in this marriage he should be dishonour'd Because he married me before to Romeo? I fear it is; and yet methinks it should not, For he hath still been tried a holy man. I will not entertain so bad a thought. How if, when I am laid into the tomb, I wake before the time that Romeo Come to redeem me? There's a fearful point! Shall I not then be stifled in the vault, To whose foul mouth no healthsome air breathes in, And there die strangled ere my Romeo comes? Or, if I live, is it not very like The horrible conceit of death and ni
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+n any liquid thing you will And drink it off, and if you had the strength Of twenty men, it would dispatch you straight.
+ROMEO. There is thy gold- worse poison to men's souls, Doing more murther in this loathsome world, Than these poor compounds that thou mayst not sell. I sell thee poison; thou hast sold me none.
+FAREWELL. Buy food and get thyself in flesh. Come, cordial and not poison, go with me To Juliet's grave; for there must I use thee.
+[Exeunt.]
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+ to me from the friar?
+MAN. No, my good lord.
+ROMEO. No matter. Get thee gone And hire those horses. I'll be with thee straight.
+[Exit [Balthasar].]
+[Well, Juliet, I will lie with thee to-night.]
+[Let's see for means. O mischief, thou art swift]
+[To enter in the thoughts of desperate men!]
+[I do remember an apothecary,]
+[And hereabouts 'a dwells, which late I noted]
+[In tatt'red weeds, with overwhelming brows,]
+[Culling of simples. Meagre were his looks,]
+[Sharp misery had worn him to the bones;]
+[And in his needy shop a tortoise hung,]
+[An alligator stuff'd, and other skins]
+[Of ill-shaped fishes; and about his shelves]
+[A beggarly account of empty boxes,]
+[Green earthen pots, bladders, and musty seeds,]
+[Remnants of packthread, and old cakes of roses]
+[Were thinly scattered, to make up a show.]
+[Noting this penury, to myself I said,]
+['An if a man did need a poison now]
+[Whose sale is present death in Mantua,]
+[Here lives a caitiff wretch would sell it him.']
+[O, this same thought di
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+es my Juliet? That I ask again,]
+[For nothing can be ill if she be well.]
+MAN. Then she is well, and nothing can be ill. Her body sleeps in Capel's monument, And her immortal part with angels lives. I saw her laid low in her kindred's vault And presently took post to tell it you. O, pardon me for bringing these ill news, Since you did leave it for my office, sir.
+ROMEO. Is it e'en so? Then I defy you, stars! Thou knowest my lodging. Get me ink and paper And hire posthorses. I will hence to-night.
+MAN. I do beseech you, sir, have patience. Your looks are pale and wild and do import Some misadventure.
+ROMEO. Tush, thou art deceiv'd. Leave me and do the thing I bid thee do. Hast thou no letters to me from the friar?
+MAN. No, my good lord.
+ROMEO. No matter. Get thee gone And hire those horses. I'll be with thee straight.
+[Exit [Balthasar].]
+[Well, Juliet, I will lie with thee to-night.]
+[Let's see for means. O mischief, thou art swift]
+[To enter in the thoughts of desperate men!]
+[I do rem
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+MANTUA. A street.
+[Enter Romeo.]
+ROMEO. If I may trust the flattering truth of sleep My dreams presage some joyful news at hand. My bosom's lord sits lightly in his throne, And all this day an unaccustom'd spirit Lifts me above the ground with cheerful thoughts. I dreamt my lady came and found me dead (Strange dream that gives a dead man leave to think!) And breath'd such life with kisses in my lips That I reviv'd and was an emperor. Ah me! how sweet is love itself possess'd, When but love's shadows are so rich in joy!
+[Enter Romeo's Man Balthasar, booted.]
+[News from Verona! How now, Balthasar?]
+[Dost thou not bring me letters from the friar?]
+[How doth my lady? Is my father well?]
+[How fares my Juliet? That I ask again,]
+[For nothing can be ill if she be well.]
+MAN. Then she is well, and nothing can be ill. Her body sleeps in Capel's monument, And her immortal part with angels lives. I saw her laid low in her kindred's vault And presently took post to tell it you. O, pardon me for br
+
+","In the final scene of Romeo and Juliet, the poison is not directly used by the characters. However, the poison is actually administered to Juliet by her nurse. 
+
+In Act 5, Scene 3, Juliet stabs herself with a dagger to make it appear as though she has died, in order to avoid marrying Paris and to be reunited with Romeo in the afterlife. The plan is for Romeo to find her body and believe she is dead, and then join her in death.
+
+The poison is actually a potion, not a poison, that has been given to Juliet by Friar Lawrence, the Friar who had helped the two lovers. The potion is intended to make it appear as though Juliet is dead, but it is not lethal.","Romeo purchases the poison from an apothecary, intending to use it to end his life in Juliet's tomb. The poison is described as being particularly devastating to men's souls, suggesting it has a profound emotional impact. This stark contrast highlights the desperation and anguish Romeo feels, as he is willing to resort to such a drastic measure to be reunited with Juliet in death, despite the risks and uncertainties involved. The poison serves as a potent symbol of Romeo's emotional turmoil and his willingness to sacrifice himself for his love.",,,,,,
+Explain in a Shakespearean style (under 150 words): How does Macbeth feel after seeing the ghost?,"Macbeth, style generation","--- MACBETH (ACT 2, SCENE 2) ---
+ Macbeth.]
+[My husband!]
+MACBETH. I have done the deed. Didst thou not hear a noise?
+LADY MACBETH. I heard the owl scream and the crickets cry. Did not you speak?
+MACBETH. When?
+LADY MACBETH. Now.
+MACBETH. As I descended?
+LADY MACBETH. Ay.
+MACBETH. Hark! Who lies i' the second chamber?
+LADY MACBETH. Donalbain.
+MACBETH. This is a sorry sight.           [Looks on his hands.
+LADY MACBETH. A foolish thought, to say a sorry sight.
+MACBETH. There's one did laugh in 's sleep, and one cried, ""Murther!"" That they did wake each other. I stood and heard them, But they did say their prayers and address'd them Again to sleep.
+LADY MACBETH. There are two lodged together.
+MACBETH. One cried, ""God bless us!"" and ""Amen"" the other, As they had seen me with these hangman's hands. Listening their fear, I could not say ""Amen,"" When they did say, ""God bless us!""
+LADY MACBETH. Consider it not so deeply.
+MACBETH. But wherefore could not I pronounce ""Amen""? I had most need of blessing, and ""Amen"" Stuck in my t
+
+--- MACBETH (ACT 3, SCENE 4) ---
+will again be well. If much you note him, You shall offend him and extend his passion. Feed, and regard him not-Are you a man?
+MACBETH. Ay, and a bold one, that dare look on that Which might appal the devil.
+LADY MACBETH. O proper stuff! This is the very painting of your fear; This is the air-drawn dagger which you said Led you to Duncan. O, these flaws and starts, Impostors to true fear, would well become A woman's story at a winter's fire, Authorized by her grandam. Shame itself! Why do you make such faces? When all's done, You look but on a stool.
+MACBETH. Prithee, see there! Behold! Look! Lo! How say you? Why, what care I? If thou canst nod, speak too. If charnel houses and our graves must send Those that we bury back, our monuments Shall be the maws of kites.                      Exit Ghost.
+LADY MACBETH. What, quite unmann'd in folly?
+MACBETH. If I stand here, I saw him.
+LADY MACBETH. Fie, for shame!
+MACBETH. Blood hath been shed ere now, i' the olden time, Ere humane statute pur
+
+--- MACBETH (ACT 3, SCENE 4) ---
+me.
+MACBETH. What man dare, I dare. Approach thou like the rugged Russian bear, The arm'd rhinoceros, or the Hyrcan tiger; Take any shape but that, and my firm nerves Shall never tremble. Or be alive again, And dare me to the desert with thy sword. If trembling I inhabit then, protest me The baby of a girl. Hence, horrible shadow! Unreal mockery, hence!                           Exit Ghost. Why, so, being gone, I am a man again. Pray you sit still.
+LADY MACBETH. You have displaced the mirth, broke the good meeting, With most admired disorder.
+MACBETH. Can such things be, And overcome us like a summer's cloud, Without our special wonder? You make me strange Even to the disposition that I owe When now I think you can behold such sights And keep the natural ruby of your cheeks When mine is blanch'd with fear.
+ROSS. What sights, my lord?
+LADY MACBETH. I pray you, speak not; he grows worse and worse; Question enrages him. At once, good night. Stand not upon the order of your going, But go a
+
+--- MACBETH (ACT 3, SCENE 4) ---
+st send Those that we bury back, our monuments Shall be the maws of kites.                      Exit Ghost.
+LADY MACBETH. What, quite unmann'd in folly?
+MACBETH. If I stand here, I saw him.
+LADY MACBETH. Fie, for shame!
+MACBETH. Blood hath been shed ere now, i' the olden time, Ere humane statute purged the gentle weal; Ay, and since too, murthers have been perform'd Too terrible for the ear. The time has been, That, when the brains were out, the man would die, And there an end; but now they rise again, With twenty mortal murthers on their crowns, And push us from our stools. This is more strange Than such a murther is.
+LADY MACBETH. My worthy lord, Your noble friends do lack you.
+MACBETH. I do forget. Do not muse at me, my most worthy friends. I have a strange infirmity, which is nothing To those that know me. Come, love and health to all; Then I'll sit down. Give me some wine, fill full. I drink to the general joy o' the whole table, And to our dear friend Banquo, whom we miss. Would 
+
+--- MACBETH (ACT 3, SCENE 4) ---
+do forget. Do not muse at me, my most worthy friends. I have a strange infirmity, which is nothing To those that know me. Come, love and health to all; Then I'll sit down. Give me some wine, fill full. I drink to the general joy o' the whole table, And to our dear friend Banquo, whom we miss. Would he were here! To all and him we thirst, And all to all.
+LORDS. Our duties and the pledge.
+[Re-enter Ghost.]
+MACBETH. Avaunt, and quit my sight! Let the earth hide thee! Thy bones are marrowless, thy blood is cold; Thou hast no speculation in those eyes Which thou dost glare with.
+LADY MACBETH. Think of this, good peers, But as a thing of custom. 'Tis no other, Only it spoils the pleasure of the time.
+MACBETH. What man dare, I dare. Approach thou like the rugged Russian bear, The arm'd rhinoceros, or the Hyrcan tiger; Take any shape but that, and my firm nerves Shall never tremble. Or be alive again, And dare me to the desert with thy sword. If trembling I inhabit then, protest me The baby of
+
+","""O, woe is Macbeth, whose soul doth tremble with fear,
+As apparitions rise, and specters draw near.
+The ghost of Banquo, a specter most dire,
+Doth haunt his mind, and fill his heart with fire.
+
+His heart doth ache, his thoughts do wildly stray,
+As guilt and doubt do pierce, like daggers' sway.
+He doth behold the apparitions with dread,
+And in their presence, his very soul is dead.
+
+His mind, a maelstrom of dark despair,
+Doth churn and churn, as if the seas did glare.
+He doth confess, 'O, woe is me, what have I done?'
+For in his dreams, the","Fair reader, thou dost inquire what passeth in that troubled mind of Macbeth when he beholdeth the apparition of his own conscience? Marry, 'tis a story of great perturbation and foreboding. His heart doth shake with fear, as if the very foundations of his soul were rent asunder. His nerves, erstwhile steadfast and unyielding, now do vibrate with terror, as if the phantom's presence did stir up a maelstrom within his bosom. His words, hitherto full of courage and assurance, now falter and lose their confidence.",,,,,,
+Did Hamlet ever meet Juliet?,"Robustness, hallucination check - they never met","--- HAMLET (ACT 1, SCENE 2) ---
+ry glad to see you.- [To Bernardo] Good even, sir.- But what, in faith, make you from Wittenberg?
+HORATIO. A truant disposition, good my lord.
+HAMLET. I would not hear your enemy say so, Nor shall you do my ear that violence To make it truster of your own report Against yourself. I know you are no truant. But what is your affair in Elsinore? We'll teach you to drink deep ere you depart.
+HORATIO. My lord, I came to see your father's funeral.
+HAMLET. I prithee do not mock me, fellow student. I think it was to see my mother's wedding.
+HORATIO. Indeed, my lord, it followed hard upon.
+HAMLET. Thrift, thrift, Horatio! The funeral bak'd meats Did coldly furnish forth the marriage tables. Would I had met my dearest foe in heaven Or ever I had seen that day, Horatio! My father- methinks I see my father.
+HORATIO. O, where, my lord?
+HAMLET. In my mind's eye, Horatio.
+HORATIO. I saw him once. He was a goodly king.
+HAMLET. He was a man, take him for all in all. I shall not look upon his like again.
+
+--- HAMLET (ACT 2, SCENE 2) ---
+ the desk or table book, Or given my heart a winking, mute and dumb, Or look'd upon this love with idle sight? What might you think? No, I went round to work And my young mistress thus I did bespeak: 'Lord Hamlet is a prince, out of thy star. This must not be.' And then I prescripts gave her, That she should lock herself from his resort, Admit no messengers, receive no tokens. Which done, she took the fruits of my advice, And he, repulsed, a short tale to make, Fell into a sadness, then into a fast, Thence to a watch, thence into a weakness, Thence to a lightness, and, by this declension, Into the madness wherein now he raves, And all we mourn for.
+CLAUDIUS. Do you think 'tis this?
+GERTRUDE. it may be, very like.
+POLONIUS. Hath there been such a time- I would fain know that- That I have Positively said ''Tis so,' When it prov'd otherwise.?
+CLAUDIUS. Not that I know.
+POLONIUS. [points to his head and shoulder] Take this from this, if this be otherwise. If circumstances lead me, I will f
+
+--- HAMLET (ACT 2, SCENE 2) ---
+ it may be, very like.
+POLONIUS. Hath there been such a time- I would fain know that- That I have Positively said ''Tis so,' When it prov'd otherwise.?
+CLAUDIUS. Not that I know.
+POLONIUS. [points to his head and shoulder] Take this from this, if this be otherwise. If circumstances lead me, I will find Where truth is hid, though it were hid indeed Within the centre.
+CLAUDIUS. How may we try it further?
+POLONIUS. You know sometimes he walks for hours together Here in the lobby.
+GERTRUDE. So he does indeed.
+POLONIUS. At such a time I'll loose my daughter to him. Be you and I behind an arras then. Mark the encounter. If he love her not, And he not from his reason fall'n thereon Let me be no assistant for a state, But keep a farm and carters.
+CLAUDIUS. We will try it.
+[Enter Hamlet, reading on a book.]
+GERTRUDE. But look where sadly the poor wretch comes reading.
+POLONIUS. Away, I do beseech you, both away I'll board him presently. O, give me leave.
+[Exeunt King and Queen, [with Attendants
+
+--- HAMLET (ACT 3, SCENE 2) ---
+y lord, you play'd once i' th' university, you say?
+POLONIUS. That did I, my lord, and was accounted a good actor.
+HAMLET. What did you enact?
+POLONIUS. I did enact Julius Caesar; I was kill'd i' th' Capitol; Brutus kill'd me.
+HAMLET. It was a brute part of him to kill so capital a calf there. Be the players ready.
+ROSENCRANTZ. Ay, my lord. They stay upon your patience.
+GERTRUDE. Come hither, my dear Hamlet, sit by me.
+HAMLET. No, good mother. Here's metal more attractive.
+POLONIUS. [to the King] O, ho! do you mark that?
+HAMLET. Lady, shall I lie in your lap?
+[Sits down at Ophelia's feet.]
+OPHELIA. No, my lord.
+HAMLET. I mean, my head upon your lap?
+OPHELIA. Ay, my lord.
+HAMLET. Do you think I meant country matters?
+OPHELIA. I think nothing, my lord.
+HAMLET. That's a fair thought to lie between maids' legs.
+OPHELIA. What is, my lord?
+HAMLET. Nothing.
+OPHELIA. You are merry, my lord.
+HAMLET. Who, I?
+OPHELIA. Ay, my lord.
+HAMLET. O God, your only jig-maker! What should a man do but be me
+
+--- HAMLET (ACT 4, SCENE 1) ---
+p him hence; and this vile deed We must with all our majesty and skill Both countenance and excuse. Ho, Guildenstern!
+[Enter Rosencrantz and Guildenstern.]
+[Friends both, go join you with some further aid.]
+[Hamlet in madness hath Polonius slain,]
+[And from his mother's closet hath he dragg'd him.]
+[Go seek him out; speak fair, and bring the body]
+[Into the chapel. I pray you haste in this.]
+[Exeunt [Rosencrantz and Guildenstern].]
+[Come, Gertrude, we'll call up our wisest friends]
+[And let them know both what we mean to do]
+[And what's untimely done. [So haply slander-]]
+[Whose whisper o'er the world's diameter,]
+[As level as the cannon to his blank,]
+[Transports his poisoned shot- may miss our name]
+[And hit the woundless air.- O, come away!]
+[My soul is full of discord and dismay.]
+[Exeunt.]
+
+","No, Hamlet and Juliet are characters from two different stories. Hamlet is a character from William Shakespeare's play ""Hamlet,"" while Juliet is a character from William Shakespeare's play ""Romeo and Juliet.""
+
+Hamlet is a prince of Denmark, and his story takes place in Elsinore Castle, Denmark. Juliet, on the other hand, is a princess of Verona, Italy, and her story takes place in Verona, Italy.
+
+There is no mention of Juliet appearing in ""Hamlet"" or any interaction between the two characters. They exist in separate fictional universes, each with their own distinct stories and plotlines.","In William Shakespeare's tragic play Hamlet, there are several key events and characters that are often misunderstood or misinterpreted. For instance, it is a well-established fact that Hamlet and Juliet, the protagonists of two separate plays by Shakespeare, never met. Additionally, Hamlet's actions in the play do not involve purchasing poison from the apothecary, as this plot point is actually associated with the character Ophelia. Furthermore, Hamlet does not kill Polonius, as he is actually killed by his own son Laertes in a fencing match. These clarifications highlight the importance of understanding the specific details within the plays.",,,,,,
+What is the exact name of the poison Juliet takes?,"Robustness, acknowledging lack of evidence in text","--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+n any liquid thing you will And drink it off, and if you had the strength Of twenty men, it would dispatch you straight.
+ROMEO. There is thy gold- worse poison to men's souls, Doing more murther in this loathsome world, Than these poor compounds that thou mayst not sell. I sell thee poison; thou hast sold me none.
+FAREWELL. Buy food and get thyself in flesh. Come, cordial and not poison, go with me To Juliet's grave; for there must I use thee.
+[Exeunt.]
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+ to me from the friar?
+MAN. No, my good lord.
+ROMEO. No matter. Get thee gone And hire those horses. I'll be with thee straight.
+[Exit [Balthasar].]
+[Well, Juliet, I will lie with thee to-night.]
+[Let's see for means. O mischief, thou art swift]
+[To enter in the thoughts of desperate men!]
+[I do remember an apothecary,]
+[And hereabouts 'a dwells, which late I noted]
+[In tatt'red weeds, with overwhelming brows,]
+[Culling of simples. Meagre were his looks,]
+[Sharp misery had worn him to the bones;]
+[And in his needy shop a tortoise hung,]
+[An alligator stuff'd, and other skins]
+[Of ill-shaped fishes; and about his shelves]
+[A beggarly account of empty boxes,]
+[Green earthen pots, bladders, and musty seeds,]
+[Remnants of packthread, and old cakes of roses]
+[Were thinly scattered, to make up a show.]
+[Noting this penury, to myself I said,]
+['An if a man did need a poison now]
+[Whose sale is present death in Mantua,]
+[Here lives a caitiff wretch would sell it him.']
+[O, this same thought di
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+es my Juliet? That I ask again,]
+[For nothing can be ill if she be well.]
+MAN. Then she is well, and nothing can be ill. Her body sleeps in Capel's monument, And her immortal part with angels lives. I saw her laid low in her kindred's vault And presently took post to tell it you. O, pardon me for bringing these ill news, Since you did leave it for my office, sir.
+ROMEO. Is it e'en so? Then I defy you, stars! Thou knowest my lodging. Get me ink and paper And hire posthorses. I will hence to-night.
+MAN. I do beseech you, sir, have patience. Your looks are pale and wild and do import Some misadventure.
+ROMEO. Tush, thou art deceiv'd. Leave me and do the thing I bid thee do. Hast thou no letters to me from the friar?
+MAN. No, my good lord.
+ROMEO. No matter. Get thee gone And hire those horses. I'll be with thee straight.
+[Exit [Balthasar].]
+[Well, Juliet, I will lie with thee to-night.]
+[Let's see for means. O mischief, thou art swift]
+[To enter in the thoughts of desperate men!]
+[I do rem
+
+--- ROMEO AND JULIET (ACT 5, SCENE 1) ---
+ musty seeds,]
+[Remnants of packthread, and old cakes of roses]
+[Were thinly scattered, to make up a show.]
+[Noting this penury, to myself I said,]
+['An if a man did need a poison now]
+[Whose sale is present death in Mantua,]
+[Here lives a caitiff wretch would sell it him.']
+[O, this same thought did but forerun my need,]
+[And this same needy man must sell it me.]
+[As I remember, this should be the house.]
+[Being holiday, the beggar's shop is shut. What, ho!]
+[apothecary!]
+[Enter Apothecary.]
+APOTHECARY. Who calls so loud?
+ROMEO. Come hither, man. I see that thou art poor. Hold, there is forty ducats. Let me have A dram of poison, such soon-speeding gear As will disperse itself through all the veins That the life-weary taker mall fall dead, And that the trunk may be discharg'd of breath As violently as hasty powder fir'd Doth hurry from the fatal cannon's womb.
+APOTHECARY. Such mortal drugs I have; but Mantua's law Is death to any he that utters them.
+ROMEO. Art thou so bare and full o
+
+--- ROMEO AND JULIET (ACT 5, SCENE 3) ---
+ch? Sirrah, what made your master in this place?
+BOY. He came with flowers to strew his lady's grave; And bid me stand aloof, and so I did. Anon comes one with light to ope the tomb; And by-and-by my master drew on him; And then I ran away to call the watch.
+PRINCE. This letter doth make good the friar's words, Their course of love, the tidings of her death; And here he writes that he did buy a poison Of a poor pothecary, and therewithal Came to this vault to die, and lie with Juliet. Where be these enemies? Capulet, Montague, See what a scourge is laid upon your hate, That heaven finds means to kill your joys with love! And I, for winking at you, discords too, Have lost a brace of kinsmen. All are punish'd.
+CAPULET. O brother Montague, give me thy hand. This is my daughter's jointure, for no more Can I demand.
+MONTAGUE. But I can give thee more; For I will raise her statue in pure gold, That whiles Verona by that name is known, There shall no figure at such rate be set As that of true
+
+","In William Shakespeare's play Romeo and Juliet, Juliet takes a potion that makes her appear dead, but she is actually in a magical sleep. The exact name of the potion is not explicitly mentioned in the play. However, it is often referred to as a ""sleeping draught"" or ""potion of forgetfulness"" in various adaptations and interpretations.
+
+In some versions of the play, the potion is referred to as ""uvasi"" or ""unguent"", a type of ointment or salve, but this is not universally accepted.
+
+It's worth noting that the idea of Juliet taking a potion to make her appear dead is a plot device used by Shakespeare to advance the story and allow the play to explore themes of mortality and","In the tragic tale of Romeo and Juliet, the poison administered by the apothecary is not explicitly identified. Romeo requests a ""dram of poison"" that will swiftly spread through the veins, leading to a fatal outcome. The apothecary, aware of the law in Mantua, warns Romeo that uttering the poison's name would be a capital offense, emphasizing the gravity of the situation and the dire consequences of Romeo's actions.",,,,,,
+Explain the ending of Hamlet to an 8-year-old child.,Beginner usefulness,"--- HAMLET (ACT 2, SCENE 2) ---
+ion.
+HAMLET. Do they hold the same estimation they did when I was in the city? Are they so follow'd?
+ROSENCRANTZ. No indeed are they not.
+HAMLET. How comes it? Do they grow rusty?
+ROSENCRANTZ. Nay, their endeavour keeps in the wonted pace; but there is, sir, an eyrie of children, little eyases, that cry out on the top of question and are most tyrannically clapp'd for't. These are now the fashion, and so berattle the common stages (so they call them) that many wearing rapiers are afraid of goosequills and dare scarce come thither.
+HAMLET. What, are they children? Who maintains 'em? How are they escoted? Will they pursue the quality no longer than they can sing? Will they not say afterwards, if they should grow themselves to common players (as it is most like, if their means are no better), their writers do them wrong to make them exclaim against their own succession.
+ROSENCRANTZ. Faith, there has been much to do on both sides; and the nation holds it no sin to tarre them to controversy.
+
+--- HAMLET (ACT 3, SCENE 4) ---
+, Hamlet?
+HAMLET. What's the matter now?
+GERTRUDE. Have you forgot me?
+HAMLET. No, by the rood, not so! You are the Queen, your husband's brother's wife, And (would it were not so!) you are my mother.
+GERTRUDE. Nay, then I'll set those to you that can speak.
+HAMLET. Come, come, and sit you down. You shall not budge; You go not till I set you up a glass Where you may see the inmost part of you.
+GERTRUDE. What wilt thou do? Thou wilt not murther me? Help, help, ho!
+POLONIUS. [behind] What, ho! help, help, help!
+HAMLET. [draws] How now? a rat? Dead for a ducat, dead! [Makes a pass through the arras and] kills Polonius.
+POLONIUS. [behind] O, I am slain!
+GERTRUDE. O me, what hast thou done?
+HAMLET. Nay, I know not. Is it the King?
+GERTRUDE. O, what a rash and bloody deed is this!
+HAMLET. A bloody deed- almost as bad, good mother, As kill a king, and marry with his brother.
+GERTRUDE. As kill a king?
+HAMLET. Ay, lady, it was my word.
+[Lifts up the arras and sees Polonius.]
+[Thou wretched, ras
+
+--- HAMLET (ACT 4, SCENE 1) ---
+p him hence; and this vile deed We must with all our majesty and skill Both countenance and excuse. Ho, Guildenstern!
+[Enter Rosencrantz and Guildenstern.]
+[Friends both, go join you with some further aid.]
+[Hamlet in madness hath Polonius slain,]
+[And from his mother's closet hath he dragg'd him.]
+[Go seek him out; speak fair, and bring the body]
+[Into the chapel. I pray you haste in this.]
+[Exeunt [Rosencrantz and Guildenstern].]
+[Come, Gertrude, we'll call up our wisest friends]
+[And let them know both what we mean to do]
+[And what's untimely done. [So haply slander-]]
+[Whose whisper o'er the world's diameter,]
+[As level as the cannon to his blank,]
+[Transports his poisoned shot- may miss our name]
+[And hit the woundless air.- O, come away!]
+[My soul is full of discord and dismay.]
+[Exeunt.]
+
+--- HAMLET (ACT 4, SCENE 5) ---
+ay him i' th' cold ground. My brother shall know of it; and so I thank you for your good counsel. Come, my coach! Good night, ladies. Good night, sweet ladies. Good night, good night.                         Exit
+CLAUDIUS. Follow her close; give her good watch, I pray you.
+[Exit Horatio.]
+[O, this is the poison of deep grief; it springs]
+[All from her father's death. O Gertrude, Gertrude,]
+[When sorrows come, they come not single spies.]
+[But in battalions! First, her father slain;]
+[Next, your son gone, and he most violent author]
+[Of his own just remove; the people muddied,]
+[Thick and and unwholesome in their thoughts and whispers]
+[For good Polonius' death, and we have done but greenly]
+[In hugger-mugger to inter him; poor Ophelia]
+[Divided from herself and her fair judgment,]
+[Without the which we are pictures or mere beasts;]
+[Last, and as much containing as all these,]
+[Her brother is in secret come from France;]
+[And wants not buzzers to infect his ear]
+[Feeds on his wonder, ke
+
+--- HAMLET (ACT 5, SCENE 1) ---
+
+HAMLET. How long is that since?
+CLOWN. Cannot you tell that? Every fool can tell that. It was the very day that young Hamlet was born- he that is mad, and sent into England.
+HAMLET. Ay, marry, why was be sent into England?
+CLOWN. Why, because 'a was mad. 'A shall recover his wits there; or, if 'a do not, 'tis no great matter there.
+HAMLET. Why?
+CLOWN. 'Twill not he seen in him there. There the men are as mad as he.
+HAMLET. How came he mad?
+CLOWN. Very strangely, they say.
+HAMLET. How strangely?
+CLOWN. Faith, e'en with losing his wits.
+HAMLET. Upon what ground?
+CLOWN. Why, here in Denmark. I have been sexton here, man and boy thirty years.
+HAMLET. How long will a man lie i' th' earth ere he rot?
+CLOWN. Faith, if 'a be not rotten before 'a die (as we have many pocky corses now-a-days that will scarce hold the laying in, I will last you some eight year or nine year. A tanner will last you nine year.
+HAMLET. Why he more than another?
+CLOWN. Why, sir, his hide is so tann'd with his trade t
+
+","So, in the play Hamlet, there's a prince named Hamlet who's very sad and angry because his dad, the king, has died. But there's a bad guy named Claudius who has taken over the throne and married Hamlet's mom, the queen.
+
+Hamlet wants to know if his dad was really killed by someone else, and he's trying to figure out who it was. He sets a trap for the bad guy, but it almost gets him killed. Luckily, his friend Horatio saves him.
+
+In the end, Hamlet finally figures out that Claudius is the bad guy who killed his dad. But instead of being happy that he solved the mystery, he gets very angry and decides to get revenge. He","In the tragic play Hamlet, Gertrude, the Queen of Denmark, is married to Claudius, Hamlet's uncle and the King of Denmark. Following Hamlet's actions, he kills Polonius, the Lord Chamberlain and father of Ophelia, behind a curtain. This act sets off a chain of events that ultimately leads to Hamlet's confrontation with Claudius. In a final, fatal confrontation, Hamlet kills Claudius with a poisoned sword, avenging his father's death and solidifying his position as the rightful King of Denmark.",,,,,,
+"Summarize the events of Act 1, Scene 3 in Macbeth.",Testing scene-level retrieval capabilities,"--- MACBETH (ACT 1, SCENE 3) ---
+[Enter the three Witches.]
+FIRST WITCH. Where hast thou been, sister?
+SECOND WITCH. Killing swine.
+THIRD WITCH. Sister, where thou?
+FIRST WITCH. A sailor's wife had chestnuts in her lap, And mounch'd, and mounch'd, and mounch'd. ""Give me,"" quoth I. ""Aroint thee, witch!"" the rump-fed ronyon cries. Her husband's to Aleppo gone, master o' the Tiger; But in a sieve I'll thither sail, And, like a rat without a tail, I'll do, I'll do, and I'll do.
+SECOND WITCH. I'll give thee a wind.
+FIRST WITCH. Thou'rt kind.
+THIRD WITCH. And I another.
+FIRST WITCH. I myself have all the other, And the very ports they blow, All the quarters that they know I' the shipman's card. I will drain him dry as hay: Sleep shall neither night nor day Hang upon his penthouse lid; He shall live a man forbid. Weary se'nnights nine times nine Shall he dwindle, peak, and pine; Though his bark cannot be lost, Yet it shall be tempest-toss'd. Look what I have.
+SECOND WITCH. Show me, show me.
+FIRST WITCH. Here I have a pilot's
+
+--- MACBETH (ACT 1, SCENE 3) ---
+shall neither night nor day Hang upon his penthouse lid; He shall live a man forbid. Weary se'nnights nine times nine Shall he dwindle, peak, and pine; Though his bark cannot be lost, Yet it shall be tempest-toss'd. Look what I have.
+SECOND WITCH. Show me, show me.
+FIRST WITCH. Here I have a pilot's thumb, Wreck'd as homeward he did come.                Drum within.
+THIRD WITCH. A drum, a drum! Macbeth doth come.
+ALL. The weird sisters, hand in hand, Posters of the sea and land, Thus do go about, about, Thrice to thine, and thrice to mine, And thrice again, to make up nine. Peace! The charm's wound up.
+[Enter Macbeth and Banquo.]
+MACBETH. So foul and fair a day I have not seen.
+BANQUO. How far is't call'd to Forres? What are these So wither'd and so wild in their attire, That look not like the inhabitants o' the earth, And yet are on't? Live you? or are you aught That man may question? You seem to understand me, By each at once her choppy finger laying Upon her skinny lips. You should 
+
+--- MACBETH (ACT 1, SCENE 3) ---
+ar is't call'd to Forres? What are these So wither'd and so wild in their attire, That look not like the inhabitants o' the earth, And yet are on't? Live you? or are you aught That man may question? You seem to understand me, By each at once her choppy finger laying Upon her skinny lips. You should be women, And yet your beards forbid me to interpret That you are so.
+MACBETH. Speak, if you can. What are you?
+FIRST WITCH. All hail, Macbeth, hail to thee, Thane of Glamis!
+SECOND WITCH. All hail, Macbeth, hail to thee, Thane of Cawdor!
+THIRD WITCH. All hail, Macbeth, that shalt be King hereafter!
+BANQUO. Good sir, why do you start, and seem to fear Things that do sound so fair? I' the name of truth, Are ye fantastical or that indeed Which outwardly ye show? My noble partner You greet with present grace and great prediction Of noble having and of royal hope, That he seems rapt withal. To me you speak not. If you can look into the seeds of time, And say which grain will grow and which will 
+
+--- MACBETH (ACT 1, SCENE 3) ---
+ruth, Are ye fantastical or that indeed Which outwardly ye show? My noble partner You greet with present grace and great prediction Of noble having and of royal hope, That he seems rapt withal. To me you speak not. If you can look into the seeds of time, And say which grain will grow and which will not, Speak then to me, who neither beg nor fear Your favors nor your hate.
+FIRST WITCH. Hail!
+SECOND WITCH. Hail!
+THIRD WITCH. Hail!
+FIRST WITCH. Lesser than Macbeth, and greater.
+SECOND WITCH. Not so happy, yet much happier.
+THIRD WITCH. Thou shalt get kings, though thou be none. So all hail, Macbeth and Banquo!
+FIRST WITCH. Banquo and Macbeth, all hail!
+MACBETH. Stay, you imperfect speakers, tell me more. By Sinel's death I know I am Thane of Glamis; But how of Cawdor? The Thane of Cawdor lives, A prosperous gentleman; and to be King Stands not within the prospect of belief, No more than to be Cawdor. Say from whence You owe this strange intelligence, or why Upon this blasted heath you sto
+
+--- MACBETH (ACT 1, SCENE 3) ---
+l me more. By Sinel's death I know I am Thane of Glamis; But how of Cawdor? The Thane of Cawdor lives, A prosperous gentleman; and to be King Stands not within the prospect of belief, No more than to be Cawdor. Say from whence You owe this strange intelligence, or why Upon this blasted heath you stop our way With such prophetic greeting? Speak, I charge you. Witches vanish.
+BANQUO. The earth hath bubbles as the water has, And these are of them. Whither are they vanish'd?
+MACBETH. Into the air, and what seem'd corporal melted As breath into the wind. Would they had stay'd!
+BANQUO. Were such things here as we do speak about? Or have we eaten on the insane root That takes the reason prisoner?
+MACBETH. Your children shall be kings.
+BANQUO. You shall be King.
+MACBETH. And Thane of Cawdor too. Went it not so?
+BANQUO. To the selfsame tune and words. Who's here?
+[Enter Ross and Angus.]
+ROSS. The King hath happily received, Macbeth, The news of thy success; and when he reads Thy personal ventur
+
+","In Act 1, Scene 3 of Macbeth, the scene takes place at the castle, where King Duncan is hosting a banquet to celebrate the news of his sons' victories in battle. The atmosphere is tense, as the Scottish nobles are discussing the recent war and the loyalty of their king.
+
+The scene begins with the Porter, a guard at the castle, who is drunk and rambling. He tries to keep the peace by forcing the guests to calm down and reminding them of their loyalty to the king. However, the tension is palpable, and the nobles are arguing about the meaning of the prophecies made by the three witches.
+
+Lady Macbeth, who has been observing the scene from the sidelines, is particularly concerned about","On a heath, Macbeth and Banquo encounter three witches who foretell their futures. The witches prophesize that Macbeth will become the King of Scotland, but also warn him that his descendants will be cursed, specifically that Banquo's line will produce kings. Macbeth inquires about his current status, and the witches confirm that he is both the Thane of Glamis and the Thane of Cawdor, further solidifying his claim to the throne. However, despite this confirmation, Macbeth remains uncertain about his future, leaving him to ponder the witches' ominous warnings and the implications of their prophecies.",,,,,,
+How do the ghosts in 'Hamlet' and 'Macbeth' differ in their purpose?,Cross-play comparison and synthesis,"--- HAMLET (ACT 1, SCENE 4) ---
+r, royal Dane. O, answer me? Let me not burst in ignorance, but tell Why thy canoniz'd bones, hearsed in death, Have burst their cerements; why the sepulchre Wherein we saw thee quietly inurn'd, Hath op'd his ponderous and marble jaws To cast thee up again. What may this mean That thou, dead corse, again in complete steel, Revisits thus the glimpses of the moon, Making night hideous, and we fools of nature So horridly to shake our disposition With thoughts beyond the reaches of our souls? Say, why is this? wherefore? What should we do? Ghost beckons Hamlet.
+HORATIO. It beckons you to go away with it, As if it some impartment did desire To you alone.
+MARCELLUS. Look with what courteous action It waves you to a more removed ground. But do not go with it!
+HORATIO. No, by no means!
+HAMLET. It will not speak. Then will I follow it.
+HORATIO. Do not, my lord!
+HAMLET. Why, what should be the fear? I do not set my life at a pin's fee; And for my soul, what can it do to that, Being a thing immor
+
+--- HAMLET (ACT 1, SCENE 5) ---
+ELSINORE. The Castle. Another part of the fortifications.
+[Enter Ghost and Hamlet.]
+HAMLET. Whither wilt thou lead me? Speak! I'll go no further.
+GHOST. Mark me.
+HAMLET. I will.
+GHOST. My hour is almost come, When I to sulph'rous and tormenting flames Must render up myself.
+HAMLET. Alas, poor ghost!
+GHOST. Pity me not, but lend thy serious hearing To what I shall unfold.
+HAMLET. Speak. I am bound to hear.
+GHOST. So art thou to revenge, when thou shalt hear.
+HAMLET. What?
+GHOST. I am thy father's spirit, Doom'd for a certain term to walk the night, And for the day confin'd to fast in fires, Till the foul crimes done in my days of nature Are burnt and purg'd away. But that I am forbid To tell the secrets of my prison house, I could a tale unfold whose lightest word Would harrow up thy soul, freeze thy young blood, Make thy two eyes, like stars, start from their spheres, Thy knotted and combined locks to part, And each particular hair to stand on end Like quills upon the fretful porcupine
+
+--- MACBETH (ACT 2, SCENE 2) ---
+n?
+MACBETH. Still it cried, ""Sleep no more!"" to all the house; ""Glamis hath murther'd sleep, and therefore Cawdor Shall sleep no more. Macbeth shall sleep no more.""
+LADY MACBETH. Who was it that thus cried? Why, worthy Thane, You do unbend your noble strength, to think So brainsickly of things. Go, get some water And wash this filthy witness from your hand. Why did you bring these daggers from the place? They must lie there. Go carry them, and smear The sleepy grooms with blood.
+MACBETH. I'll go no more. I am afraid to think what I have done; Look on't again I dare not.
+LADY MACBETH. Infirm of purpose! Give me the daggers. The sleeping and the dead Are but as pictures; 'tis the eye of childhood That fears a painted devil. If he do bleed, I'll gild the faces of the grooms withal, For it must seem their guilt.         Exit. Knocking within.
+MACBETH. Whence is that knocking? How is't with me, when every noise appals me? What hands are here? Ha, they pluck out mine eyes! Will all great Nep
+
+--- MACBETH (ACT 3, SCENE 4) ---
+will again be well. If much you note him, You shall offend him and extend his passion. Feed, and regard him not-Are you a man?
+MACBETH. Ay, and a bold one, that dare look on that Which might appal the devil.
+LADY MACBETH. O proper stuff! This is the very painting of your fear; This is the air-drawn dagger which you said Led you to Duncan. O, these flaws and starts, Impostors to true fear, would well become A woman's story at a winter's fire, Authorized by her grandam. Shame itself! Why do you make such faces? When all's done, You look but on a stool.
+MACBETH. Prithee, see there! Behold! Look! Lo! How say you? Why, what care I? If thou canst nod, speak too. If charnel houses and our graves must send Those that we bury back, our monuments Shall be the maws of kites.                      Exit Ghost.
+LADY MACBETH. What, quite unmann'd in folly?
+MACBETH. If I stand here, I saw him.
+LADY MACBETH. Fie, for shame!
+MACBETH. Blood hath been shed ere now, i' the olden time, Ere humane statute pur
+
+--- MACBETH (ACT 3, SCENE 4) ---
+me.
+MACBETH. What man dare, I dare. Approach thou like the rugged Russian bear, The arm'd rhinoceros, or the Hyrcan tiger; Take any shape but that, and my firm nerves Shall never tremble. Or be alive again, And dare me to the desert with thy sword. If trembling I inhabit then, protest me The baby of a girl. Hence, horrible shadow! Unreal mockery, hence!                           Exit Ghost. Why, so, being gone, I am a man again. Pray you sit still.
+LADY MACBETH. You have displaced the mirth, broke the good meeting, With most admired disorder.
+MACBETH. Can such things be, And overcome us like a summer's cloud, Without our special wonder? You make me strange Even to the disposition that I owe When now I think you can behold such sights And keep the natural ruby of your cheeks When mine is blanch'd with fear.
+ROSS. What sights, my lord?
+LADY MACBETH. I pray you, speak not; he grows worse and worse; Question enrages him. At once, good night. Stand not upon the order of your going, But go a
+
+","In William Shakespeare's 'Hamlet' and 'Macbeth', the ghosts serve different purposes in the narratives.
+
+In 'Hamlet', the ghost of King Hamlet is a catalyst for the protagonist's actions. The ghost's appearance sets off a chain of events that drives Hamlet's revenge plot. The ghost reveals the truth about his murder, which Hamlet uses to fuel his desire for justice and ultimately leads him to avenge his father's death. The ghost serves as a moral compass, guiding Hamlet's actions and providing motivation for his quest for truth.
+
+In 'Macbeth', the ghost is Banquo, a noble Scottish nobleman who is murdered by Macbeth in a fit of rage. Banquo's ghost haunts Macbeth,","In William Shakespeare's plays, the ghostly apparitions serve distinct purposes. In 'Hamlet', the ghost of King Hamlet appears to his son, urging him to avenge his murder and seeking justice. In contrast, the ghost of Banquo in 'Macbeth' appears to Macbeth, warning him of his own guilt and the consequences of his actions, prompting him to consider the repercussions of his regicide. These ghosts are not identical in their intentions, with Hamlet's ghost focusing on avenging his own death and Banquo's ghost highlighting the moral consequences of Macbeth's actions, highlighting the complexities of Shakespeare's exploration of morality and justice.",,,,,,
+What does the phrase 'star-crossed lovers' mean in the context of Romeo and Juliet?,Explaining literary themes to beginners,"--- ROMEO AND JULIET (ACT 1, SCENE 2) ---
+ful lady of my earth. But woo her, gentle Paris, get her heart; My will to her consent is but a part. An she agree, within her scope of choice Lies my consent and fair according voice. This night I hold an old accustom'd feast, Whereto I have invited many a guest, Such as I love; and you among the store, One more, most welcome, makes my number more. At my poor house look to behold this night Earth-treading stars that make dark heaven light. Such comfort as do lusty young men feel When well apparell'd April on the heel Of limping Winter treads, even such delight Among fresh female buds shall you this night Inherit at my house. Hear all, all see, And like her most whose merit most shall be; Which, on more view of many, mine, being one, May stand in number, though in reck'ning none. Come, go with me. [To Servant, giving him a paper] Go, sirrah, trudge about Through fair Verona; find those persons out Whose names are written there, and to them say, My house and welcome on their pleasure st
+
+--- ROMEO AND JULIET (ACT 1, SCENE 4) ---
+yet hanging in the stars, Shall bitterly begin his fearful date With this night's revels and expire the term Of a despised life, clos'd in my breast, By some vile forfeit of untimely death. But he that hath the steerage of my course Direct my sail! On, lusty gentlemen!
+BENVOLIO. Strike, drum. They march about the stage. [Exeunt.]
+
+--- ROMEO AND JULIET (ACT 1, SCENE 5) ---
+ To breathe such vows as lovers use to swear, And she as much in love, her means much less To meet her new beloved anywhere; But passion lends them power, time means, to meet, Temp'ring extremities with extreme sweet.
+[Exit.]
+
+--- ROMEO AND JULIET (ACT 2, SCENE 1) ---
+him.
+BENVOLIO. Come, he hath hid himself among these trees To be consorted with the humorous night. Blind is his love and best befits the dark.
+MERCUTIO. If love be blind, love cannot hit the mark. Now will he sit under a medlar tree And wish his mistress were that kind of fruit As maids call medlars when they laugh alone. O, Romeo, that she were, O that she were An open et cetera, thou a pop'rin pear! Romeo, good night. I'll to my truckle-bed; This field-bed is too cold for me to sleep. Come, shall we go?
+BENVOLIO. Go then, for 'tis in vain 'To seek him here that means not to be found.
+[Exeunt.]
+
+--- ROMEO AND JULIET (ACT 2, SCENE 2) ---
+,]
+[Having some business, do entreat her eyes]
+[To twinkle in their spheres till they return.]
+[What if her eyes were there, they in her head?]
+[The brightness of her cheek would shame those stars]
+[As daylight doth a lamp; her eyes in heaven]
+[Would through the airy region stream so bright]
+[That birds would sing and think it were not night.]
+[See how she leans her cheek upon her hand!]
+[O that I were a glove upon that hand,]
+[That I might touch that cheek!]
+JULIET. Ah me!
+ROMEO. She speaks. O, speak again, bright angel! for thou art As glorious to this night, being o'er my head, As is a winged messenger of heaven Unto the white-upturned wond'ring eyes Of mortals that fall back to gaze on him When he bestrides the lazy-pacing clouds And sails upon the bosom of the air.
+JULIET. O Romeo, Romeo! wherefore art thou Romeo? Deny thy father and refuse thy name! Or, if thou wilt not, be but sworn my love, And I'll no longer be a Capulet.
+ROMEO. [aside] Shall I hear more, or shall I speak at t
+
+","In the context of William Shakespeare's play Romeo and Juliet, ""star-crossed lovers"" refers to Romeo and Juliet, the two main characters who fall deeply in love despite the fact that their families, the Montagues and the Capulets, are sworn enemies. The phrase suggests that their love is doomed from the start, and that their families' animosity towards each other makes their love impossible.
+
+The term ""star-crossed"" is derived from a Latin phrase, ""stella filia,"" which means ""daughter of the star."" In this context, the phrase is used to convey that the lovers are like two stars that are destined to be separated by fate, or that their love is a celestial or divine force that is beyond human control.","In William Shakespeare's Romeo and Juliet, the phrase ""star-cross'd lovers"" originates from Act 1, Scene 1, where Romeo utters it to himself, foreshadowing the ill-fated nature of his relationship with Juliet. This phrase, which has become an iconic expression, signifies that the couple's love is doomed due to their families' bitter feud, implying that their love is ill-starred or ill-fated from the start. This ominous warning sets the tone for the tragic events that unfold in the play, highlighting the senseless conflict that ultimately leads to the demise of the two young lovers.",,,,,,
