@@ -1,4 +1,4 @@
-# Shakespeare-Assignment# Installation and Environment Setup Guide
+# Shakespeare-Assignment Installation and Environment Setup Guide
 This project utilizes a conditionally routed RAG pipeline with a localized Small Language Model (Llama-3.2-3B-Instruct) loaded in 4-bit quantization. Due to the strict hardware constraints and the use of Low-Rank Adaptation (LoRA), please follow these setup instructions carefully to ensure the environment is configured correctly.
 ### 1. Prerequisites
  * **Operating System:** Windows or Linux (macOS is supported for CPU/MPS, but bitsandbytes 4-bit quantization is natively optimized for NVIDIA GPUs).
