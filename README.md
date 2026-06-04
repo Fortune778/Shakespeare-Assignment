@@ -55,15 +55,20 @@ Because Llama 3.2 is a gated model, you must authenticate your terminal with Hug
  4. Paste your token when prompted.
 ### 7. Execution Instructions
 Once the environment shakespeare_rag is active and dependencies are installed, you can run the system.
-Ensure the static assets (shakespeare_master.index, master_metadata.json, and the shakespeare_lora_final/ adapter directory) are in the same root folder as your scripts.
+
+**Process the data first and store it into FAISS:**
+```bash
+python src/build_index.py
+
+```
 **To run the full pipeline (RAG + conditionally routed LoRA):**
 ```bash
-python rag_lora.py
+python src/rag_lora.py
 
 ```
 **To run the baseline RAG implementation (without style transfer):**
 ```bash
-python rag_chatbot.py
+python src/rag_chatbot.py
 
 ```
 The script will automatically detect the best available hardware (CUDA), load the model in 4-bit precision, and initialize a while True: listening loop for your queries.
