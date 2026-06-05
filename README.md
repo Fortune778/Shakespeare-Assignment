@@ -71,4 +71,9 @@ python src/rag_lora.py
 python src/rag_chatbot.py
 
 ```
+**To evaluate the system using the provided test set:**
+```bash
+python evaluate/evaluate.py
+
+```
 The script will automatically detect the best available hardware (CUDA), load the model in 4-bit precision, and initialize a while True: listening loop for your queries.
