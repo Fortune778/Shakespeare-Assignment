@@ -9,14 +9,13 @@ from peft import PeftModel
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-# Add the assignment-2 directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assignment-2')))
+# Add the src directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
 try:
     from rag_lora import generate_rag_response
 except ImportError as e:
-    print(f"Warning: Could not import assignment-2 modules. Details: {e}")
+    print(f"Warning: Could not import src modules. Details: {e}")
     generate_rag_response = None
 
 
@@ -68,10 +67,7 @@ def get_optimal_device():
 
 
 def main():
-    # Set working directory to assignment-2 to load index and metadata correctly
-    original_cwd = os.getcwd()
-    assignment_2_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assignment-2'))
-    os.chdir(assignment_2_dir)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
     print("--- INITIALIZING EVALUATION SYSTEM ---")
     
@@ -111,15 +107,12 @@ def main():
         )
     
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
-    model = PeftModel.from_pretrained(base_model, "shakespeare_lora_final")
+    model = PeftModel.from_pretrained(base_model, os.path.join(project_root, "shakespeare_lora_final"))
     
     print("[3/3] Loading Database...")
-    index = faiss.read_index("shakespeare_master.index")
-    with open("master_metadata.json", "r", encoding="utf-8") as f:
+    index = faiss.read_index(os.path.join(project_root, "data", "preprocessed", "shakespeare_master.index"))
+    with open(os.path.join(project_root, "data", "preprocessed", "master_metadata.json"), "r", encoding="utf-8") as f:
         metadata = json.load(f)
-
-    # Revert to original directory
-    os.chdir(original_cwd)
 
     # 1. Test Set Definition
     test_questions = [

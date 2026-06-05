@@ -48,9 +48,13 @@ else:
         torch_dtype=torch.float16 if device == "mps" else torch.bfloat16
     )
 
+import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
 # 3. Load Database
-index = faiss.read_index("data/preprocessed/shakespeare_master.index")
-with open("master_metadata.json", "r", encoding="utf-8") as f:
+index = faiss.read_index(os.path.join(PROJECT_ROOT, "data", "preprocessed", "shakespeare_master.index"))
+with open(os.path.join(PROJECT_ROOT, "data", "preprocessed", "master_metadata.json"), "r", encoding="utf-8") as f:
     metadata = json.load(f)
 
 print("System Ready!\n")
