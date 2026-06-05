@@ -1,0 +1,495 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+% ============================================================
+% Packages
+% ============================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setminted{fontsize=\footnotesize,breaklines=true,frame=single,autogobble=true}
+
+% ============================================================
+
+% ============================================================
+% Title
+% ============================================================
+\title{
+Assignment 2 Report Template:\\
+Domain Adaptation with Small Language Models
+}
+
+\author{
+\IEEEauthorblockN{
+Group Number: \emph{Insert Group Number}
+}
+\IEEEauthorblockA{
+CSCI433/933 Machine Learning Algorithms and Applications\\
+Student Names and Student Numbers: \emph{Insert Details}\\
+}
+}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% Page Limit Notice
+% ============================================================
+% \begin{center}
+% \fbox{
+% \begin{minipage}{0.94\linewidth}
+% \textbf{Main Report Page Limit:} The main report must not exceed \textbf{10 pages}, in the style of IEEE conference submissions. 
+% The 10-page (absolute) limit applies from the abstract through the conclusion.
+% References, appendices, full evaluation tables, extended prompts, and the GenAI usage log are excluded from the 10-page limit.
+% Marks are awarded for clarity, technical depth, evidence, and quality of reasoning, not for length.
+% \end{minipage}
+% }
+% \end{center}
+
+% ============================================================
+% Abstract
+% ============================================================
+\begin{abstract}
+This project addresses the challenge of improving domain-specific question answering using small language models. A Retrieval-Augmented Generation (RAG) system was developed to help users with little or no prior knowledge of Shakespeare understand characters, events, and themes in selected plays. The system combines a small language model with a retrieval component that searches a Shakespeare dataset containing scenes and passages from plays such as \textit{Hamlet}, \textit{Macbeth}, and \textit{Romeo and Juliet}. 
+
+The evaluation compares the RAG system with a baseline model, focusing on factual correctness, grounding, and response quality. Results show that the RAG system provides more detailed and better-grounded answers by incorporating relevant textual evidence. It also performs well in generating stylised responses that imitate Shakespearean language. However, improvements in correctness are moderate, as the baseline already provides reasonably accurate answers. Limitations include occasional retrieval errors, inconsistent grounding, and overly complex explanations. Overall, the findings suggest that RAG enhances response completeness and grounding, but further improvements are needed in retrieval precision and user-friendly explanation.
+\end{abstract}
+
+% ============================================================
+\section{Introduction and Problem Formulation}
+\label{sec:introduction}
+
+\textbf{Relevant marks: Problem formulation and task understanding (10 marks).}
+
+Natural Language Processing (NLP) is an important area of artificial intelligence that enables computers to understand and process human language. ~\cite{khurana2023natural}It is widely applied in tasks such as text summarisation, translation, and intelligent assistant systems. However, some texts, such as Shakespeare’s poems and dramas, remain difficult for modern readers due to their archaic vocabulary, unique grammar, and complex structure. This challenge also affects language models, as most are trained on modern English data and struggle to accurately interpret older forms of language. As a result, their outputs can be vague or incorrect when dealing with Shakespearean text. To address this issue, this project combines a Small Language Model (SLM) with a Retrieval-Augmented Generation (RAG) framework. By retrieving relevant passages from a Shakespeare corpus, the system provides context-aware responses and reduces hallucinations. The goal is to help users better understand Shakespeare through simplified and accurate explanations. The goal of this project is to develop a system that assists users in understanding Shakespearean texts by providing both simplified modern English interpretations and accurate, context-based explanations. 
+
+
+% ============================================================
+\section{Dataset and Preprocessing}
+\label{sec:dataset}
+
+\textbf{Relevant marks: Dataset preparation and documentation (15 marks).}
+
+The system employs a cleanly separated data architecture to allow for unique style translation while maintaining factual integrity. The style transfer capacity is based on a localized Low-Rank Adaptation (LoRA) weight configuration~\cite{hu2022lora} trained on structurally mapped language pairs, whilst the primary knowledge base consists of a vectorized primary text repository. 
+
+\subsection{Dataset Representation and Preparation }
+
+The three tragic works of William Shakespeare—Hamlet, Macbeth, and Romeo and Juliet—make up the main text dataset. A uniform pipeline was used to process the corpus to get it ready for vector-based semantic retrieval: 
+
+ 
+\begin{itemize}
+    \item Structure of the Dataset: The full text of each play is presented as a 
+    single collection of entries in a master JSON array file \verb|master_metadata.json|.
+    This repository isolates text payload content from structural text index 
+    metadata. This repository is intended to act as a lightweight document database that connects to a local vector index file 
+    \verb|shakespeare_master.index|.
+
+    \item Chunking Strategy Implementation: Instead of using single-utterance lines, large scene level files, or using utterance level lines or scene level files, the corpus was divided into section-level dialogue chunks (targeting 1000 characters) using a sliding window overlap technique of 300 characters. This overlap mitigates information loss at chunk boundaries, a standard practice for preserving semantic context in Retrieval-Augmented Generation systems ~\cite{gao2023retrieval}.
+
+    \item Metadata Retained: Each data entry includes three critical explicit keys: play, act, and scene. Other identifiers for a source and speech-user attributes were not included in the explicit key dictionary structure. Instead, speaker declarations were embedded in the textual payload.
+
+    \item Cleaning, Filtering, and Normalisation: Text preparation consisted of removing extraneous spacing and normalizing special characters. Most significantly, a strict size filter was established. Any chunk of text that contained 200 characters or less was eliminated. This avoided a decline in accuracy of search results, while also minimizing fragments of text.
+
+    \item Supplementary Material and "Metadata Injection": We utilized a dual-representation approach to enhance retrieval precision while keeping the LLM's context window unaffected. During the preprocessing phase, additional materials (such as scene summaries and thematic keywords) were arranged into a "Rich Header" tag (e.g., [SUMMARY: ...] [KEYWORDS: ...]) and attached to the text chunk. This augmented version was sent solely to the FAISS embedder ~\cite{douze2025faiss} to generate a highly dense, searchable numeric vector. However, the 
+    \verb|master_metadata.json|.
+    file stored only the original, untagged text. This method ensures that the retriever can take advantage of the additional summaries, while the generative LLM only ever processes genuine Shakespeare.
+\end{itemize}
+
+
+
+\subsection{Dataset Schema}
+The refined index schema is organized efficiently to reduce unnecessary overhead while maintaining clear chronological filtering markers. Presented below is the exact JSON schema structure taken straight from our operational \verb|master_metadata.json|:
+
+\begin{minted}{json}
+{
+   "play": "Hamlet",
+  "act": 1,
+  "scene": 1,
+  "chunk_text": "lus.]\nFRANCISCO. I think I hear them. Stand, ho! Who is there?\nHORATIO. Friends to this ground.\nMARCELLUS. And liegemen to the Dane.\nFRANCISCO. Give you good night.\nMARCELLUS. O, farewell, honest soldier. Who hath reliev'd you?\nFRANCISCO. Bernardo hath my place. Give you good night.                                   Exit.\nMARCELLUS. Holla, Bernardo!\nBERNARDO. Say- What, is Horatio there ?\nHORATIO. A piece of him.\nBERNARDO. Welcome, Horatio. Welcome, good Marcellus.\nMARCELLUS. What, has this thing appear'd again to-night?\nBERNARDO. I have seen nothing.\nMARCELLUS. Horatio says 'tis but our fantasy, And will not let belief take hold of him Touching this dreaded sight, twice seen of us. Therefore I have entreated him along, With us to watch the minutes of this night, That, if again this apparition come, He may approve our eyes and speak to it.\nHORATIO. Tush, tush, 'twill not appear.\nBERNARDO. Sit down awhile, And let us once again assail your ears, That are so fortified against our story, "
+
+}
+\end{minted}
+
+\subsection{Chunking Strategy}
+
+The choice of a medium-sized, section-level chunking pattern (1000 characters with a 300-character overlap) is a strategic architectural choice intended to enhance retrieval accuracy while meeting the physical limitations of local consumer GPUs.
+
+Creating a RAG pipeline reveals a clear architectural dilemma concerning the level of detail in segment chunking:
+
+\begin{itemize}
+    \item Short Chunks (Utterance-Level): Analyzing the script line-by-line produces very detailed vector representations. Nonetheless, individual statements miss crucial dramatic context. A phrase like "A piece of him" offers almost no independent semantic meaning for an embedding model. Additionally, it deprives the language model of the context needed to understand the character's intentions.
+
+    \item Long Chunks (Scene-Level): Ingesting complete acts or scenes maintains narrative flow and context. Nevertheless, it significantly diminishes the specificity of vector retrieval. The embedding vector of a 2,000-word scene gets spread out across various thematic changes, complicating the task for a mathematical encoder such as all-MiniLM-L6-v2 to align with particular user inquiries about specific plot elements.
+\end{itemize}
+
+Suitability Justification and The Role of Overlap Our 1000-character segmentation method addresses these problems by organizing engaging dialogue segments. Importantly, a sliding window (chunk overlap) of 300 characters was utilized during the preprocessing stage.
+In theatrical scripts, dialogue context often extends beyond paragraph limits—a segment may conclude just as a character poses an essential question, resulting in the next segment providing the answer while missing the prior context.
+
+% ============================================================
+\section{Methodology}
+\label{sec:methodology}
+
+\textbf{Relevant marks: Model adaptation and RAG methodology (20 marks).}
+
+The technical methodology for this project assesses the effectiveness of a localized Small Language Model (SLM) by contrasting a zero-shot baseline with a sophisticated, conditionally routed Retrieval-Augmented Generation (RAG) pipeline improved through Parameter-Efficient Fine-Tuning (PEFT).
+
+\subsection{Baseline System}
+
+To rigorously assess the enhancements brought by our architecture, we created a prompt-only benchmark.
+
+\begin{itemize}
+    \item System Functionality: The fundamental system functions as a straightforward dialogue agent. Upon receiving a question from a user, the system encapsulates the query in a predefined system prompt ("You are a helpful assistant."). Respond to the user's query in a clear and factual manner, producing an instant reply.
+    \item Model Utilized: It utilizes the identical foundational model as the enhanced pipeline: meta-llama/Llama-3.2-3B-Instruct ~\cite{grattafiori2024llama}, loaded in 4-bit quantization. Importantly, the tailored Shakespearean LoRA adapter is actively turned off with the 
+    \verb|model.disable_adapter()|
+    context manager during baseline inference.
+    \item Information Access: The baseline system operates entirely independently. It does not have access to the FAISS vector database, does not include metadata filters, and does not provide retrieved context. It relies solely on the pre-trained parametric memory incorporated into the Llama 3.2 3B weights.
+    \item Fairness of Comparison: This serves as a mathematically sound and precise baseline since it functions as an ablation analysis. By utilizing the identical base model functioning under the same hardware limitations—but devoid of RAG and LoRA techniques—any noted decrease in hallucinations or enhancement in stylistic quality in the final system can be directly linked to our architectural design instead of a difference in foundational model performance.
+\end{itemize}
+
+\subsection{RAG-Based System}
+
+The enhanced structure is a multi-agent, two-pass system intended to differentiate factual retrieval from s the "prompt overload" that tylistic creation, avoidingusually leads SLMs to fabricate information.
+
+\begin{itemize}
+    \item Embedding Model and Indexing: The system employs sentence-transformers/all-
+    MiniLM-L6-v2 to create 384-dimensional dense vectors. These vectors are 
+    indexed with FAISS (IndexFlatL2) for quick similarity searching based on 
+    Euclidean distance. In the indexing process, a "Metadata Injection" approach was 
+    employed, incorporating a detailed header (including play, act, scene, and 
+    summaries) into the vector space to enhance semantic mapping.
+    \item Retrieval Methodology: Retrieval is executed via a Hybrid Metadata-Aware approach.
+    \item Query Expansion: The base model (with LoRA disabled) first generates two alternative search variants to cast a wider semantic net.
+    \item Metadata Parsing: A regular expression (Regex) engine scans the user query for specific play names, acts, and scenes (including Roman numerals).
+    \item Hybrid Search: The system executes a semantic vector search across the expanded queries. If specific metadata (e.g., "Hamlet Act 1") is detected, the results are hard-filtered to prioritize those localized chunks.
+    \item Number of Retrieved Chunks and Context Formatting: The system selects a strict maximum of 5 unique chunks. Crucially, before being passed to the LLM, Python sorts these 5 chunks chronologically (by Act and Scene). This prevents timeline hallucination, ensuring the model reads cause-and-effect narrative events in the correct temporal order.
+    \item Generation and Prompt Structure (The Two-Pass System): Instead of requesting the model to interpret context and compose Shakespearean prose at the same time, we separate the generation into two individual agentic stages:
+    \item Pass 1 (Fact Extraction): The context arranged in chronological order is incorporated into a precise prompt requesting "exactly 2 or 3 brief bullet points" that include just explicit facts. To ensure the highest factual accuracy, the LoRA adapter is briefly turned off during this process.
+
+    \item Pass 2 (Conditional Synthesis): The modern bullet points that were extracted are sent to a second prompt for generating natural language. When the user's request activates the regex style detector (for instance, "Explain in a Shakespearean style"), the QLoRA style adapter
+    \verb|(shakespeare_lora_final)|
+    engages, prompting the model to function as a historian from the 16th century. If a style isn't specified, the LoRA adapter stays inactive, and the model generates a contemporary scholarly paragraph.
+\end{itemize}
+
+\subsection{Model Choice and Justification}
+
+The foundational model chosen for this project is meta-llama/Llama-3.2-3B-Instruct.
+
+\begin{itemize}
+ \item SLM Principles and Hardware Constraints: The task requires a Small Language Model strategy, rendering a 3-Billion parameter structure perfect. Our intended operational hardware is a consumer-level laptop GPU (NVIDIA RTX 2050 with just 4GB of VRAM). Trying to execute larger models (such as 8B or 70B versions) directly on this hardware leads to severe Out-of-Memory (OOM) errors.
+
+ \item Resource Constrained Optimization: To effectively launch Llama 3.2 3B 
+ within a 4GB VRAM limit, we adopted several cutting-edge memory 
+ optimizations. We employed the BitsAndBytesConfig to load the model in 4-
+ bit NormalFloat4 (NF4) quantization, shrinking the model's size from about 
+ 6GB to approximately 2GB. Moreover, 
+\verb|PyTorch's expandable_segments:|
+True allocation setting was implemented to avoid memory fragmentation during 
+ extensive context RAG generation.
+
+ \item LoRA Justification: Complete parameter fine-tuning to train the model
+ in 16th-century English cannot be achieved with 4GB of VRAM. Consequently, 
+ we employed Quantized Low-Rank Adaptation (QLoRA) ~\cite{dettmers2023qlora}. By fixing the 3B 
+ base parameters and solely training a low-rank adapter (Rank=8, Alpha=16) 
+ that focuses on the
+ \verb|q_proj|
+ and 
+  \verb|v_proj attention mechanisms|
+ , we effectively changed the linguistic style of the model. This method exemplifies 
+ the concept of resource-limited AI engineering: obtaining specific model behavior 
+ adjustments with low computational cost.
+\end{itemize}
+
+
+% ============================================================
+\section{System Design and Implementation}
+\label{sec:system}
+
+\textbf{Relevant marks: System implementation and usability (15 marks).}
+
+The established system incorporates a multi-agent, conditionally routed Retrieval-Augmented Generation (RAG) framework. To meet the strict 4GB VRAM hardware limitation while preserving complete factual accuracy, the system alternates a Quantized Low-Rank Adaptation (QLoRA) style adapter during inference, separating factual information retrieval from stylistic generation.
+\subsection{System Pipeline}
+
+The end-to-end execution flow functions as a deterministic pipeline, ensuring that mathematical retrieval and generative reasoning remain functionally isolated.
+\begin{enumerate}
+    \item User Query and Intent Classification: The process begins by 
+    recording the user's query in natural language. A simple Regex-driven
+    heuristic function 
+    \verb|(detect_shakespeare_request)|
+    captures the query to determine the user's stylistic intention (e.g., 
+    identifying terms like "Shakespearean style" or "16th-century"). This 
+    boolean indicator determines the path for the last generation process.
+    \item Query Expansion: To enhance retrieval recall, the system employs the static base SLM to produce two different semantic variations of the user’s query. This avoids "vocabulary discrepancy" between contemporary user inquiries and 16th-century source materials.
+    \item Hybrid Metadata-Aware Retrieval: * Metadata Parsing: The system examines the query for clear structural indicators (e.g., "Act 1, Scene 3"). If identified, the system skips vector search and executes a direct sub-string match with the dictionary metadata.
+    \begin{enumerate}
+        \item Vector Embedding: For semantic queries, the varied expanded queries are processed through the all-MiniLM-L6-v2 encoder, converting the text into 384-dimensional dense vectors.
+
+        \item Similarity Search and Sorting: The vectors are searched using the pre-compiled FAISS index (L2 distance metric). The five most distinctive segments are extracted and—importantly—reorganized in chronological order according to their Act and Scene information. This rigorously upholds temporal causality, stopping the LLM from mixing up narrative timelines.
+    \end{enumerate}
+    \item Prompt Construction (Two-Pass Mechanism): The system relies on a two-pass prompt orchestration structure wrapped in the official Llama 3 Chat Template 
+    \verb|(<start_header_id>...):|
+    \begin{enumerate}
+        \item Pass 1 Prompt: The context arranged in chronological order is integrated into a very stringent data-extraction prompt, directing the model to produce "exactly 2 or 3 short bullet points" with solely factual information, avoiding fabricated narrative connections.
+        \item Pass 2 Prompt: The bullet points generated in Pass 1 provide the foundation for the Pass 2 prompt, directing the model to combine the information into a unified paragraph (in either modern academic or 16th-century prose).
+    \end{enumerate}
+    \item Response Generation (Dynamic Adapter Toggling): 
+    \begin{enumerate}
+        \item Pass 1 Generation: The model executes the data extraction strictly with the LoRA adapter disabled 
+        \verb|(model.disable_adapter()).|
+        This guarantees the base model's logical reasoning is uncompromised by the adapter's stylistic biases.
+
+        \item Pass 2 Generation: The synthesis stage directs conditionally. If the user asked for a Shakespearean style, the system reengages the QLoRA adapter 
+        \verb|(shakespeare_lora_final)|
+        and creates Early Modern English prose through multinomial sampling. If standard contemporary English is requested, the adapter stays disabled, performing standard base-model synthesis.
+    \end{enumerate}
+    \item Evidence Display: Following the synthesized response, the system parses the citations array generated during Step 3 and prints a deduplicated list of source references (e.g., "Macbeth (Act 1, Scene 3)"), ensuring traceability.
+    \item Logging and Evaluation Output: For scientific assessment, the system connects with a modular evaluation script. This script repeatedly assesses the pipeline against a separate zero-shot baseline, recording the varied outputs into a formatted 
+    \verb|evaluation_results.csv|
+    file for subsequent manual evaluation of correctness, grounding, and stylistic precision.
+\end{enumerate}
+
+\subsection{Implementation Details}
+
+The system is engineered for maximal resource efficiency, leveraging hardware-specific memory management protocols. 
+
+\begin{itemize}
+    \item programming language and libraries;
+        \begin{itemize}
+            \item Language: Python 3.10+
+            \item Deep Learning Backend: 
+            PyTorch~\cite{paszke2019pytorch} (configured with 
+            \texttt{os.environ["PYTORCH\_CUDA\_ALLOC\_CONF"] = 
+            "expandable\_segments:True"} 
+            to prevent VRAM fragmentation).
+            \item Orchestration and Quantization: Hugging Face transformers~\cite{wolf2020transformers}, peft (for LoRA routing), and bitsandbytes (for 4-bit NF4 weight quantization).
+            \item Retrieval: sentence-transformers and faiss-cpu.
+        \end{itemize}
+    \item repository structure;
+        \begin{itemize}
+            \item \texttt{rag\_lora.py:}
+            The primary interactive CLI application and pipeline orchestrator.
+            \item \texttt{train\_lora.py:}
+            The offline QLoRA SFT (Supervised Fine-Tuning) script.
+            \item \texttt{shakespeare\_master.index:}
+            The serialized FAISS binary vector store.
+            \item \texttt{master\_metadata.json:}
+            The un-enriched pure text and citation dictionary.
+            \item \texttt{shakespeare\_lora\_final/:}
+            The directory containing the trained \texttt{adapter\_config.json} and \texttt{.safetensors weights.}
+        \end{itemize}
+        
+    \item Execution Instructions:
+    The system is intended for execution through a terminal-based CLI. After installing the dependencies, the user just executes python \texttt{rag\_lora.py} for LoRA implemented program and \texttt{rag\_chatbot.py} for just RAG implementation. The program independently identifies the best hardware (cuda, mps, or cpu), sets up the 4-bit weights, and provides a while True: listening loop for user requests.
+    \item Dependencies:
+    Execution requires: torch, transformers, accelerate, bitsandbytes, peft, sentence-transformers, faiss-cpu, and numpy.
+    \item Cached Embeddings and Indices:
+    To minimize inference latency, semantic embeddings are strictly pre-computed. The system dynamically loads the static \texttt{shakespeare\_master.index} (FAISS L2 Index) into RAM at runtime. Embedding calculations during inference are exclusively limited to encoding the user's brief input query, reducing runtime processing overhead to a fraction of a second.
+    \item Limitations of the Implementation:
+    \begin{itemize}
+        \item Context Window Constraints: The reliance on a 4GB VRAM ceiling limits the maximum token allowance for context injection. While the 5-chunk chronological retrieval method is highly efficient, queries requiring macro-thematic synthesis across an entire play (e.g., tracking character arcs from Act 1 to Act 5) may exceed the buffer capacity or suffer from "lost in the middle" phenomenon, where LLMs fail to retrieve facts embedded deeply within long context windows ~\cite{liu2024lost}.
+        \item Stateless Architecture: The current implementation is single-turn and stateless; it does not cache a conversational history array. Consequently, the system cannot process follow-up queries featuring anaphora (e.g., "Why did he do that?").
+
+        \item Cross-Play Ambiguity: If a user query relies heavily on generalized keywords (e.g., "the king", "the ghost") without specifying the play, the vector database may retrieve a hybrid context spanning Hamlet and Macbeth, occasionally leading to confused multi-play summaries if the Regex filters fail to lock onto a specific target.
+    \end{itemize}
+\end{itemize}
+
+% ============================================================
+\section{Evaluation Design}
+\label{sec:evaluation-design}
+
+\textbf{Relevant marks: Evaluation, comparison, and error analysis (20 marks).}
+
+Our evaluation protocol was designed to systematically compare the performance of two models: the Baseline System (Llama-3.2-3B-Instruct directly queried with its LoRA adapter disabled) and the Improved RAG System (utilising FAISS vector database retrieval alongside the Shakespeare LoRA adapter). We executed an automated script that queried both systems sequentially across a predefined test suite, exporting the generated responses to a CSV file. Each response was then manually analysed, graded, and documented to provide a comprehensive diagnostic review of the systems' strengths and limitations.
+\subsection{Evaluation Questions}
+
+Our group-designed questions were intended to test the outer limits and specific competencies of the systems. Specifically, they were designed to assess robustness against hallucination traps (e.g., querying non-existent cross-play interactions like “Did Hamlet ever meet Juliet?”), evaluate specific scene-level retrieval capabilities, measure style generation quality (e.g., "Explain in a Shakespearean style (under 150 words): How does Macbeth feel after seeing the ghost?"), and gauge usefulness for a beginner (e.g., explaining a tragic ending to an 8-year-old child). Crucially, our Improved RAG System is designed such that the LoRA adapter is only triggered when the user explicitly requests the output to be in a Shakespearean style (as demonstrated in Question 9). If no such style is requested, the system relies on a factual extraction pass with the LoRA adapter disabled to ensure maximum accuracy and prevent stylistic hallucinations.
+
+\subsection{Scoring Criteria}
+
+We utilised a 1–10 scoring scale for each criterion to provide a granular assessment of system performance. On this scale, a score of 1 represents a complete failure (such as severe plot fabrications or totally irrelevant retrieval), a score of 5 indicates a partially successful response (generally acceptable but lacking depth, containing minor errors, or missing key constraints), and a score of 10 signifies an outstanding, flawless execution.
+Our evaluation included the following dimensions:
+
+
+\begin{itemize}
+    \item Correctness:\\
+    Measures the factual accuracy of the response. A score of 1 indicates severe plot confusions or fundamental factual errors, 5 means mostly correct but with minor omissions, and 10 means flawlessly accurate and comprehensive.
+    \item Grounding:\\
+    Evaluates the integration of specific textual evidence. A score of 1 reflects reliance solely on parametric memory with no citations, 5 indicates generic references without specific evidence, and 10 demonstrates the seamless weaving of exact, highly relevant quotes.
+    \item Retrieval Relevance:\\
+    Assesses the quality of the passages fetched by the vector database. A score of 1 means irrelevant chunks were retrieved, 5 means partially relevant chunks that miss critical scenes, and 10 indicates perfect passage selection.
+    \item Usefulness for a beginner:\\
+    Evaluates the accessibility of the response and its adherence to specific constraints. A score of 1 means an inappropriate tone that severely scrambles the plot, 5 indicates correct facts but overly academic language, and 10 means a 	perfectly tailored, child-friendly explanation.
+    \item Style quality:\\
+    Evaluates the effectiveness of the LoRA adapter in generating authentic Early Modern English when explicitly requested by the user. Since the LoRA adapter is conditionally 	triggered by the prompt's style request, this metric assesses how 	well the model transitions from factual RAG retrieval into a stylistic prose synthesis. A score of 1 indicates standard modern English or a failure to follow the formatting constraints (e.g., writing poetry instead of continuous prose), 5 reflects superficial archaic markers (e.g., simply adding “doth” to a modern sentence) without capturing the character's emotional depth, and 10 denotes an outstanding, natural Shakespearean prose register that deeply understands the literary context (e.g., accurately portraying Macbeth's psychological terror) using appropriate vocabulary and syntax.
+\end{itemize}
+
+\subsection{Evaluation Table Format}
+
+\begin{table}[h]
+\centering
+\caption{Example compact evaluation summary.}
+\label{tab:evaluation-summary}
+\begin{tabularx}{\linewidth}{lccc}
+\toprule
+System & Correctness & Grounding & Usefulness \\
+\midrule
+Baseline & \emph{5.5} & \emph{0.5} & \emph{6.5} \\
+RAG System & \emph{7.0} & \emph{8.5} & \emph{4.5} \\    
+LoRA & \emph{9.0} & \emph{6.0} & \emph{10.0} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ============================================================
+\section{Results and Analysis}
+\label{sec:results}
+
+\textbf{Relevant marks: Evaluation, comparison, and error analysis (20 marks).}
+
+
+
+\subsection{Baseline versus RAG Comparison}
+
+Compare the baseline system with the improved RAG-based system.
+
+Discuss:
+
+\begin{itemize}
+    \item whether RAG improved factual correctness:\\
+    The RAG system does not significantly improve factual correctness in this case. Both the baseline and RAG systems produce generally accurate answers. This is because the baseline model is already capable of answering common Shakespeare questions using its internal knowledge. Therefore, the additional retrieved evidence does not lead to a noticeable improvement in correctness.
+    \item cases where RAG helped:\\
+    The retrieved evidence improves answer grounding in some cases. When relevant passages are successfully retrieved, the RAG system is able to generate more detailed responses that are clearly supported by the text. This makes the answers more reliable compared to the baseline system, which relies only on its internal knowledge without any supporting evidence. However, grounding improvement depends on the quality of retrieval and is not consistent in all cases.
+    \item cases where RAG helped:\\
+    The RAG system performs well in cases where the question requires comparison between characters or events from different plays. In these situations, the retrieval component provides additional information from multiple parts of the Shakespeare dataset. As a result, the system is able to generate more complete and balanced answers. This makes it easier to compare different plays or characters, as the response includes information from both sources rather than focusing on only one.
+    \item cases where RAG did not help:\\
+    The RAG system does not always improve performance, particularly for questions that describe character personality. In these cases, the baseline system already provides accurate answers based on its internal knowledge. The retrieved evidence may not add significant new information, or it may be unnecessary, resulting in little improvement. This suggests that RAG is less effective when the question does not require additional contextual information.
+    
+\end{itemize}
+
+\subsection{Qualitative Examples}
+
+Include a small number of representative examples. 
+For each example, show:
+
+\begin{itemize}
+    \item whether RAG improved factual correctness;
+    \item cases where RAG helped\\
+    \textbf{Question:}  
+How do the ghosts in "Hamlet" and "Macbeth" differ in their purpose?\\
+    \textbf{Baseline System Output:}  
+    In William Shakespeare's 'Hamlet' and 'Macbeth', the ghosts serve different purposes in the narratives. In 'Hamlet', the ghost of King Hamlet is a catalyst for the protagonist's actions. The ghost's appearance sets off a chain of events that drives Hamlet's revenge plot. The ghost reveals the truth about his murder, which Hamlet uses to fuel his desire for justice and ultimately leads him to avenge his father's death. The ghost serves as a moral compass, guiding Hamlet's actions and providing motivation for his quest for truth. In 'Macbeth', the ghost is Banquo, a noble Scottish nobleman who is murdered by Macbeth in a fit of rage. Banquo's ghost haunts Macbeth,\\
+    
+    \textbf{RAG System Output:}  \\
+    In William Shakespeare's plays, the ghostly apparitions serve distinct purposes. In 'Hamlet', the ghost of King Hamlet appears to his son, urging him to avenge his murder and seeking justice. In contrast, the ghost of Banquo in 'Macbeth' appears to Macbeth, warning him of his own guilt and the consequences of his actions, prompting him to consider the repercussions of his regicide. These ghosts are not identical in their intentions, with Hamlet's ghost focusing on avenging his own death and Banquo's ghost highlighting the moral consequences of Macbeth's actions, highlighting the complexities of Shakespeare's exploration of morality and justice.\\
+    
+    \textbf{Interpretation:}The RAG system provides a more balanced answer than the baseline system. This is because the RAG system can retrieve additional informaiton about Macbeth from the Shakespeare dataset, while the baseline system only use its own knowledge without any support.  As the result, the RAG system answer comparison question better than baseline system by using information from both texts.\\
+
+    \item whether retrieved evidence improved answer grounding\\
+    \textbf{Question:}  
+    What is the role of Lady Macbeth?\\
+    \textbf{Baseline System Output:}  
+    In William Shakespeare's play 'Macbeth', Lady Macbeth is a complex and multifaceted character who plays a significant role in the tragic events that unfold. She is the wife of Macbeth, a Scottish nobleman and the Thane of Cawdor, who becomes embroiled in a plot to murder King Duncan and seize the throne. Initially, Lady Macbeth is portrayed as a strong-willed and ambitious woman who goads her husband into committing the murder. She is the driving force behind the plot, and her goading and manipulation of Macbeth ultimately lead to the tragic events that unfold. However, as the play progresses, Lady Macbeth's character becomes increasingly consumed by guilt and paranoia. Her actions and words have a profound\\
+    
+    \textbf{RAG System Output:}  \\
+   In William Shakespeare's play Macbeth, Lady Macbeth is a pivotal character who plays a central role in her husband's descent into madness and tyranny. She is the queen of Scotland and the driving force behind Macbeth's decision to murder King Duncan, goading him into committing the heinous act. However, her own guilt and paranoia soon consume her, as she becomes fixated on erasing the "spot" of blood from her hands, which she believes will restore her to a state of moral purity. This obsessive preoccupation ultimately leads to her downfall, as her own psychological turmoil mirrors the chaos she has unleashed upon Scotland.\\
+    
+    \textbf{Interpretation:}\\
+    Both systems provide generally correct answers, but the RAG system offers a more detailed and evidence-supported explanation of Lady Macbeth’s role. This is because the RAG system retrieves relevant passages from Act 1 and Act 5, which clearly show both her ambition and her later guilt. In contrast, the baseline response relies on general knowledge without referring to specific textual evidence. This demonstrates that the RAG system improves answer grounding by linking the response directly to Shakespeare’s text.
+\end{itemize}
+
+\subsection{Failure Analysis}
+
+Discuss at least three failure cases. 
+Possible failure types include:
+
+\begin{itemize}
+    \item hallucinated answer:\\
+    \textbf{Question:}  Did Hamlet ever meet Juliet?\\
+    \textbf{RAG System Output:}  \\
+   In William Shakespeare's tragic play Hamlet, there are several key events and characters that are often misunderstood or misinterpreted. For instance, it is a well-established fact that Hamlet and Juliet, the protagonists of two separate plays by Shakespeare, never met. Additionally, Hamlet's actions in the play do not involve purchasing poison from the apothecary, as this plot point is actually associated with the character Ophelia. Furthermore, Hamlet does not kill Polonius, as he is actually killed by his own son Laertes in a fencing match. These clarifications highlight the importance of understanding the specific details within the plays.\\
+    
+    \textbf{Interpretation:}\\
+   The RAG system produces a hallucinated and unfocused response in this case. 
+    While the question only asks whether Hamlet and Juliet ever meet, the system introduces unrelated information, including incorrect details about poison and character relationships. 
+    This indicates poor grounding, as the response is not strictly based on relevant retrieved evidence. 
+    Instead, the model relies partially on its internal knowledge and generates additional, unnecessary content. 
+    Some of this information is also factually incorrect, highlighting both hallucination and reasoning errors. 
+    This issue could be improved by strengthening prompt constraints and ensuring the model focuses only on relevant context when answering the question.\\
+    \item beginner-unfriendly explanation:\\
+    \textbf{Question:}  Explain the ending of Hamlet to an 8-year-old child.\\
+    \textbf{RAG System Output:}  \\
+   In the tragic play Hamlet, Gertrude, the Queen of Denmark, is married to Claudius, Hamlet's uncle and the King of Denmark. Following Hamlet's actions, he kills Polonius, the Lord Chamberlain and father of Ophelia, behind a curtain. This act sets off a chain of events that ultimately leads to Hamlet's confrontation with Claudius. In a final, fatal confrontation, Hamlet kills Claudius with a poisoned sword, avenging his father's death and solidifying his position as the rightful King of Denmark.\\
+    
+    \textbf{Interpretation:}\\
+    The RAG system does not perform well in this case because it fails to follow the instruction targeting an 8-year-old audience. Although the response is factually reasonable, the explanation uses complex vocabulary and detailed narrative structure, making it difficult for a child to understand. This indicates a limitation in style control rather than factual correctness or grounding. The model focuses on providing a formal summary instead of simplifying the content. This issue could be improved by strengthening prompt design, such as explicitly requiring simple vocabulary, short sentences, and child-friendly explanations, ensuring the output matches the intended audience.\\
+    \item confusion between plays or characters:\\
+    \textbf{Question:} Who is Hamlet?\\
+    \textbf{RAG System Output:}  \\
+   Hamlet is the main character and the Prince of Denmark, holding the position of King. He is the son of King Claudius and Queen Gertrude, and the brother of Laertes.\\
+    
+    \textbf{Interpretation:}\\
+   The RAG system generates incorrect information in this case. 
+    The response incorrectly states that Hamlet is the son of Claudius and the brother of Laertes, which is factually wrong. This issue may be caused by incorrect or mixed retrieval results, where passages about different characters are retrieved together. As a result, the model produces a response that combines unrelated information.This problem could be improved by enhancing retrieval accuracy and strengthening grounding through prompt design, ensuring that the model relies only on relevant evidence.
+    
+    
+\end{itemize}
+
+For each failure case, explain what went wrong and how it might be improved.
+
+% ============================================================
+\section{Responsible Use of Generative AI}
+\label{sec:genai}
+
+\textbf{Relevant marks: Responsible and transparent GenAI usage (10 marks).}
+
+Generative AI tools, including Google Gemini, ChatGPT, and Microsoft 365 Copilot, were used throughout this project to support both learning and system development. These tools were primarily used to explain technical concepts (e.g., differences between SLMs and LLMs, RAG design, and LoRA), assist with system implementation, summarise Shakespearean texts, and suggest improvements for the RAG pipeline.
+
+AI-generated outputs were carefully verified through multiple sources, including research papers, GitHub implementations, and official documentation. The group critically evaluated all suggestions by testing them within the system and adapting them based on hardware constraints and project requirements. For example, model recommendations were modified using 4-bit quantisation to fit local GPU limitations, and pipeline integrations were adjusted to preserve metadata.
+
+Some AI outputs were accepted directly, while others were modified (e.g., prompt design and retrieval pipeline). In cases where suggestions did not align with project needs, they were rejected, such as unnecessary changes to chunking strategy. To ensure originality, all final explanations, evaluations, and analyses were written by the group based on their own understanding, with AI tools used only as support rather than a replacement for independent work.
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+Overall, the system largely meets the assignment objectives by enabling users with limited knowledge of Shakespeare to ask questions and receive useful responses. The RAG framework improves performance compared to the baseline system, although the improvement is moderate rather than significant. It is effective in providing explanations of characters, events, and relationships, supported by retrieved context from the Shakespeare dataset. In addition, the system demonstrates strong performance in stylised generation, producing responses that closely imitate Shakespearean language.
+
+The evaluation reveals that the main strengths of the system lie in grounding and response completeness, particularly for questions requiring comparison or explanation. However, weaknesses remain in retrieval accuracy and consistency, as some retrieved passages are not always precise or directly relevant to the question.
+
+The most important design choices include the use of retrieval-augmented generation and prompt design, which significantly influence both grounding quality and response style. With more time, improvements could focus on refining prompt engineering, enhancing data processing, and generating more beginner-friendly explanations. These changes would help ensure more accurate retrieval and clearer, more accessible responses.
+
+% ============================================================
+% References
+% ============================================================
+% \begin{thebibliography}{1}
+
+
+
+% \end{thebibliography}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography.bib}
+% ============================================================
+% Appendices
+% ============================================================
+
+\end{document}
