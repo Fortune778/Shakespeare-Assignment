@@ -6,10 +6,13 @@ from sentence_transformers import SentenceTransformer
 
 print("--- BUILDING RICH SHAKESPEARE INDEX (WITH METADATA INJECTION) ---")
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
 input_files = [
-    "hamlet_scene_chunks.jsonl", 
-    "macbeth_scene_chunks.jsonl", 
-    "romeo_and_juliet_scene_chunks.jsonl"
+    os.path.join(PROJECT_ROOT, "data", "raw", "hamlet_scene_chunks.jsonl"), 
+    os.path.join(PROJECT_ROOT, "data", "raw", "macbeth_scene_chunks.jsonl"), 
+    os.path.join(PROJECT_ROOT, "data", "raw", "romeo_and_juliet_scene_chunks.jsonl")
 ]
 
 # DENSER CHUNKING: 1000 characters with 300 overlap for high precision
@@ -77,8 +80,8 @@ embeddings = embedder.encode(texts_to_embed, show_progress_bar=True)
 index = faiss.IndexFlatL2(embeddings.shape[1])
 index.add(np.array(embeddings))
 
-faiss.write_index(index, "data/preprocessed/shakespeare_master.index")
-with open("master_metadata.json", "w", encoding='utf-8') as f:
+faiss.write_index(index, os.path.join(PROJECT_ROOT, "data", "preprocessed", "shakespeare_master.index"))
+with open(os.path.join(PROJECT_ROOT, "data", "preprocessed", "master_metadata.json"), "w", encoding='utf-8') as f:
     json.dump(metadata, f, indent=4)
 
 print("✅ Official Instructor Database Ready.")

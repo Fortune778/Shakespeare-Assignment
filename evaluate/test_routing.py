@@ -7,9 +7,8 @@ from peft import PeftModel
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-# Add assignment-2 directory to python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assignment-2')))
+# Add src directory to python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
 from rag_lora import generate_rag_response, get_optimal_device
 
@@ -48,10 +47,10 @@ def main():
     
     print("[2/3] Loading Shakespeare LoRA...")
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    assignment_2_dir = os.path.abspath(os.path.join(base_dir, "..", "assignment-2"))
-    lora_path = os.path.join(assignment_2_dir, "shakespeare_lora_final")
-    index_path = os.path.join(assignment_2_dir, "shakespeare_master.index")
-    metadata_path = os.path.join(assignment_2_dir, "master_metadata.json")
+    project_root = os.path.abspath(os.path.join(base_dir, ".."))
+    lora_path = os.path.join(project_root, "models", "shakespeare_lora_final")
+    index_path = os.path.join(project_root, "data", "preprocessed", "shakespeare_master.index")
+    metadata_path = os.path.join(project_root, "data", "preprocessed", "master_metadata.json")
     
     model = PeftModel.from_pretrained(base_model, lora_path)
     

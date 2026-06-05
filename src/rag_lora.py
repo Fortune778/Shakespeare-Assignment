@@ -328,15 +328,19 @@ def main():
             torch_dtype=torch.float16 if device == "mps" else torch.bfloat16
         )
     
+    import os
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
-    model = PeftModel.from_pretrained(base_model, "shakespeare_lora_final")
+    model = PeftModel.from_pretrained(base_model, os.path.join(PROJECT_ROOT, "models", "shakespeare_lora_final"))
     
     print("[3/3] Loading Database...")
-    index = faiss.read_index("shakespeare_master.index")
-    with open("master_metadata.json", "r", encoding="utf-8") as f:
+    index = faiss.read_index(os.path.join(PROJECT_ROOT, "data", "preprocessed", "shakespeare_master.index"))
+    with open(os.path.join(PROJECT_ROOT, "data", "preprocessed", "master_metadata.json"), "r", encoding="utf-8") as f:
         metadata = json.load(f)
     
-    print("\n✅ System Ready! The Bard will now speak in prose.\n")
+    print("\n✅ System Ready! The Scholar will now speak in prose.\n")
     
     while True:
         user_query = input("\nYour Question: ")
