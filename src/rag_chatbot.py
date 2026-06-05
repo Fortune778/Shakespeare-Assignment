@@ -110,20 +110,15 @@ while True:
     # ==========================================
     print("\n[Agent 1: Reading Context & Generating Answer...]")
     
-    system_instruction = "You are a highly precise, factual assistant and a master of Shakespearean translation."
+    system_instruction = "You are a highly precise, factual assistant."
     user_prompt = (
         f"Context:\n{context_text}\n\n"
         f"Question: {user_query}\n\n"
         f"CRITICAL INSTRUCTIONS:\n"
         f"1. Extract a factual summary from the context to fully answer the question. Rely ONLY on the provided context. Do NOT make up facts or use external knowledge. Do not assume or extrapolate. If the context does not contain the answer, explicitly state that it is not mentioned. (50 to 75 WORDS).\n"
-        f"2. Translate that summary into 16th-century Early Modern English (50 to 75 WORDS).\n"
-        f"3. Do NOT write a poem. Use EXACTLY the format below.\n\n"
-        f"--- EXAMPLE FORMAT ---\n"
-        f"EXTRACT: [50-75 words]\n"
-        f"TRANSLATE: [50-75 words]\n"
-        f"----------------------\n\n"
+        f"2. Do NOT write a poem. Output your factual summary directly.\n\n"
         f"Now answer the user's Question using the Context provided.\n"
-        f"EXTRACT:"
+        f"Answer:"
     )
     
     messages = [
@@ -146,7 +141,7 @@ while True:
 
     response = tokenizer.decode(outputs[0][inputs['input_ids'].shape[-1]:], skip_special_tokens=True)
     
-    print(f"\nThe Bard Replies:\nEXTRACT:{response}\n")
+    print(f"\nThe Scholar Replies:\n{response.strip()}\n")
     
     print("--- Sources ---")
     for cite in sorted(set(citations)): 
