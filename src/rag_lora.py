@@ -340,7 +340,7 @@ def main():
     with open(os.path.join(PROJECT_ROOT, "data", "preprocessed", "master_metadata.json"), "r", encoding="utf-8") as f:
         metadata = json.load(f)
     
-    print("\n✅ System Ready! The Bard will now speak in prose.\n")
+    print("\n✅ System Ready! The Scholar will now speak in prose.\n")
     
     while True:
         user_query = input("\nYour Question: ")
