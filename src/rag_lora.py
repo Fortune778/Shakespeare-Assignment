@@ -333,7 +333,7 @@ def main():
     PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
-    model = PeftModel.from_pretrained(base_model, os.path.join(PROJECT_ROOT, "shakespeare_lora_final"))
+    model = PeftModel.from_pretrained(base_model, os.path.join(PROJECT_ROOT, "models", "shakespeare_lora_final"))
     
     print("[3/3] Loading Database...")
     index = faiss.read_index(os.path.join(PROJECT_ROOT, "data", "preprocessed", "shakespeare_master.index"))

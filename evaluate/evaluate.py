@@ -107,7 +107,7 @@ def main():
         )
     
     print("[2/3] Attaching Shakespeare LoRA Adapter...")
-    model = PeftModel.from_pretrained(base_model, os.path.join(project_root, "shakespeare_lora_final"))
+    model = PeftModel.from_pretrained(base_model, os.path.join(project_root, "models", "shakespeare_lora_final"))
     
     print("[3/3] Loading Database...")
     index = faiss.read_index(os.path.join(project_root, "data", "preprocessed", "shakespeare_master.index"))

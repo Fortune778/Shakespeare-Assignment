@@ -48,7 +48,7 @@ def main():
     print("[2/3] Loading Shakespeare LoRA...")
     base_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.abspath(os.path.join(base_dir, ".."))
-    lora_path = os.path.join(project_root, "shakespeare_lora_final")
+    lora_path = os.path.join(project_root, "models", "shakespeare_lora_final")
     index_path = os.path.join(project_root, "data", "preprocessed", "shakespeare_master.index")
     metadata_path = os.path.join(project_root, "data", "preprocessed", "master_metadata.json")
     
